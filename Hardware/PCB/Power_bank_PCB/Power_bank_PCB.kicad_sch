@@ -703,212 +703,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector:Screw_Terminal_01x02"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 0 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Screw_Terminal_01x02"
-				(at 0 -5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "screw terminal"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "TerminalBlock*:*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Screw_Terminal_01x02_1_1"
-				(rectangle
-					(start -1.27 1.27)
-					(end 1.27 -3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.5334 0.3302) (xy 0.3302 -0.508)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.5334 -2.2098) (xy 0.3302 -3.048)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.3556 0.508) (xy 0.508 -0.3302)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.3556 -2.032) (xy 0.508 -2.8702)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0)
-					(radius 0.635)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 -2.54)
-					(radius 0.635)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector:TestPoint"
 			(pin_numbers
 				(hide yes)
@@ -2391,172 +2185,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:D_Schottky"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "D_Schottky"
-				(at 0 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Schottky diode"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "diode Schottky"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "D_Schottky_0_1"
-				(polyline
-					(pts
-						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "D_Schottky_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:L"
 			(pin_numbers
 				(hide yes)
@@ -3059,6 +2687,172 @@
 					(at 0 -3.81 90)
 					(length 1.27)
 					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Diode:SS32"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SS32"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_SMD:D_SMA"
+				(at 0 -4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.vishay.com/docs/88751/ss32.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "20V 3A Schottky Diode, SMA"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode Schottky"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "D*SMA*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SS32_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SS32_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -6617,16 +6411,6 @@
 	)
 	(wire
 		(pts
-			(xy 276.86 52.07) (xy 276.86 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "08b40e7a-9a34-4278-bd31-d6e814719c74")
-	)
-	(wire
-		(pts
 			(xy 26.67 193.04) (xy 137.16 193.04)
 		)
 		(stroke
@@ -8317,7 +8101,7 @@
 	)
 	(wire
 		(pts
-			(xy 276.86 41.91) (xy 276.86 40.64)
+			(xy 276.86 40.64) (xy 276.86 44.45)
 		)
 		(stroke
 			(width 0)
@@ -10216,7 +10000,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "04345939-26ae-4c8d-9b77-0f8f592e6585")
-		(property "Reference" "C29"
+		(property "Reference" "C23"
 			(at 288.29 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10238,7 +10022,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 286.0548 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -10280,7 +10064,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C29")
+					(reference "C23")
 					(unit 1)
 				)
 			)
@@ -10298,7 +10082,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "043b03f5-a260-43ef-b2c2-ea2407af4d59")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR09"
 			(at 45.72 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -10358,7 +10142,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR022")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -10375,7 +10159,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0a6a8749-cc00-436d-a07f-0e71469f9be0")
-		(property "Reference" "C26"
+		(property "Reference" "C29"
 			(at 346.71 39.37 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10397,7 +10181,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 344.4748 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -10439,7 +10223,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C26")
+					(reference "C29")
 					(unit 1)
 				)
 			)
@@ -10548,7 +10332,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0ae2241b-c344-4ccb-87b6-7ecd6faf116a")
-		(property "Reference" "R17"
+		(property "Reference" "R27"
 			(at 285.75 66.0399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10570,7 +10354,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 281.432 67.31 90)
 			(hide yes)
 			(show_name no)
@@ -10612,7 +10396,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R17")
+					(reference "R27")
 					(unit 1)
 				)
 			)
@@ -10629,7 +10413,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0c06205c-48ad-47d5-b7ef-9b078aa37ca9")
-		(property "Reference" "R15"
+		(property "Reference" "R16"
 			(at 144.78 160.0199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10651,7 +10435,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 140.462 161.29 90)
 			(hide yes)
 			(show_name no)
@@ -10693,7 +10477,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R15")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -10711,7 +10495,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0c2794a9-9c99-41f0-bcfb-0b6cef9828dc")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR059"
 			(at 323.85 194.31 0)
 			(hide yes)
 			(show_name no)
@@ -10771,7 +10555,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR044")
+					(reference "#PWR059")
 					(unit 1)
 				)
 			)
@@ -10788,7 +10572,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0f34680c-8f9c-4735-94b9-0dfa897db741")
-		(property "Reference" "#PWR066"
+		(property "Reference" "#PWR047"
 			(at 276.86 21.59 0)
 			(hide yes)
 			(show_name no)
@@ -10848,7 +10632,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR066")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -10866,7 +10650,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0fcaac8b-17f7-4eea-8989-212cda259b4a")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR032"
 			(at 156.21 255.27 0)
 			(hide yes)
 			(show_name no)
@@ -10926,7 +10710,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR028")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -10943,7 +10727,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1153412e-fe2e-4556-8b3f-500b641d4ba1")
-		(property "Reference" "C19"
+		(property "Reference" "C18"
 			(at 158.75 163.83 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10965,7 +10749,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 161.5948 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -11007,88 +10791,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 276.86 45.72 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "12b93c3b-5cfc-43e1-a0c1-a9702c377393")
-		(property "Reference" "R30"
-			(at 279.4 44.4499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 279.4 46.99 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 275.082 45.72 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 276.86 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 276.86 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "f37f263d-ebc9-4875-b229-2753fbd59b30")
-		)
-		(pin "1"
-			(uuid "279d681c-e81b-4f69-b892-74101db3d152")
-		)
-		(instances
-			(project "Power_bank_PCB"
-				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R30")
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -11105,7 +10808,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "13842560-0fee-47fe-b072-7ba7c0fff2b9")
-		(property "Reference" "C10"
+		(property "Reference" "C4"
 			(at 36.83 171.45 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11127,7 +10830,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 39.6748 165.1 0)
 			(hide yes)
 			(show_name no)
@@ -11169,7 +10872,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C10")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -11186,7 +10889,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "175c8aed-5edb-4491-b7f6-9b4a6b7376d0")
-		(property "Reference" "C20"
+		(property "Reference" "C19"
 			(at 168.91 163.83 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11208,7 +10911,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 166.6748 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -11250,7 +10953,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C20")
+					(reference "C19")
 					(unit 1)
 				)
 			)
@@ -11267,7 +10970,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "17ddd715-7f7f-438a-aced-cc13bbd9d254")
-		(property "Reference" "R25"
+		(property "Reference" "R19"
 			(at 231.14 229.8699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11289,7 +10992,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 226.822 231.14 90)
 			(hide yes)
 			(show_name no)
@@ -11331,7 +11034,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R25")
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -11348,7 +11051,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "195d7d43-0284-4ecd-980b-5be23737f8c0")
-		(property "Reference" "R24"
+		(property "Reference" "R23"
 			(at 256.54 124.4599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11370,7 +11073,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 252.222 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -11412,7 +11115,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R24")
+					(reference "R23")
 					(unit 1)
 				)
 			)
@@ -11430,7 +11133,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "197f8423-274f-4f3d-a39e-ddd2eaf299c1")
-		(property "Reference" "#PWR025"
+		(property "Reference" "#PWR013"
 			(at 54.61 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -11490,7 +11193,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR025")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -11508,7 +11211,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "19c180c2-ae00-49a4-a231-1759ecbe8b6d")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR07"
 			(at 43.18 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -11568,7 +11271,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR01")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -11607,7 +11310,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 56.642 259.08 90)
 			(hide yes)
 			(show_name no)
@@ -11667,7 +11370,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "20597325-7568-45e8-9a7b-02f54eeef28c")
-		(property "Reference" "U5"
+		(property "Reference" "U6"
 			(at 370.4433 184.15 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11749,7 +11452,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "U5")
+					(reference "U6")
 					(unit 1)
 				)
 			)
@@ -11788,7 +11491,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 56.642 251.46 90)
 			(hide yes)
 			(show_name no)
@@ -11847,7 +11550,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "267edbe4-3e83-4899-81f0-043cfc35b49e")
-		(property "Reference" "Q5"
+		(property "Reference" "Q4"
 			(at 314.96 215.9 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11917,7 +11620,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "Q5")
+					(reference "Q4")
 					(unit 1)
 				)
 			)
@@ -11934,7 +11637,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "28117876-75f2-4cbf-afc1-7cdfc97954f6")
-		(property "Reference" "#PWR051"
+		(property "Reference" "#PWR067"
 			(at 355.6 227.33 0)
 			(hide yes)
 			(show_name no)
@@ -11994,7 +11697,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR051")
+					(reference "#PWR067")
 					(unit 1)
 				)
 			)
@@ -12193,7 +11896,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "29b145e6-5665-4b3d-91da-98e87f2c798b")
-		(property "Reference" "#PWR041"
+		(property "Reference" "#PWR056"
 			(at 313.69 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -12253,7 +11956,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR041")
+					(reference "#PWR056")
 					(unit 1)
 				)
 			)
@@ -12349,7 +12052,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2bf40cc1-bd56-4177-8a46-7612a83b0b2f")
-		(property "Reference" "C4"
+		(property "Reference" "C8"
 			(at 40.64 26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12371,7 +12074,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 47.9552 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -12413,7 +12116,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C4")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -12430,7 +12133,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2c006ffd-68d1-4663-8ac9-22266e642a64")
-		(property "Reference" "TP8"
+		(property "Reference" "TP10"
 			(at 368.3 58.42 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12452,7 +12155,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D1.3mm_L11.0mm_LooseFit"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
 			(at 367.03 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -12491,7 +12194,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "TP8")
+					(reference "TP10")
 					(unit 1)
 				)
 			)
@@ -12509,7 +12212,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2d878e6c-4b2b-4abf-9c13-bf42d85554c5")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR030"
 			(at 151.13 255.27 0)
 			(hide yes)
 			(show_name no)
@@ -12569,7 +12272,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR026")
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -12586,7 +12289,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2e28c8dd-929d-45e7-bbdf-6fca5de635b9")
-		(property "Reference" "#PWR058"
+		(property "Reference" "#PWR012"
 			(at 53.34 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -12646,7 +12349,87 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR058")
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:SS32")
+		(at 62.23 34.29 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "303cb4ba-33ae-4917-82f3-2324369d7f10")
+		(property "Reference" "D3"
+			(at 61.9125 27.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SS32"
+			(at 61.9125 30.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 62.23 38.735 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/88751/ss32.pdf"
+			(at 62.23 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "20V 3A Schottky Diode, SMA"
+			(at 62.23 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "3955a9f8-3f48-46a4-b753-16eef77bb23a")
+		)
+		(pin "1"
+			(uuid "1d130226-d90d-4e42-b19a-37b724b9aa8d")
+		)
+		(instances
+			(project "Power_bank_PCB"
+				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
+					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -12663,7 +12446,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3101f306-237e-4727-87f5-6c836177e480")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR03"
 			(at 39.37 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -12723,7 +12506,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR05")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -12842,7 +12625,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "322fdbad-f33f-43ef-9e6f-ceb7c46aa42a")
-		(property "Reference" "#PWR036"
+		(property "Reference" "#PWR045"
 			(at 271.78 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -12902,7 +12685,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR036")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -12920,7 +12703,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "34c1f50b-2363-4639-aac9-62a1a14970f7")
-		(property "Reference" "R18"
+		(property "Reference" "R11"
 			(at 97.79 80.0099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12942,7 +12725,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 93.472 81.28 90)
 			(hide yes)
 			(show_name no)
@@ -12984,7 +12767,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R18")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -13002,7 +12785,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3771968a-af7d-4bd3-887e-a7864847b8e6")
-		(property "Reference" "#PWR043"
+		(property "Reference" "#PWR058"
 			(at 323.85 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -13062,7 +12845,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR043")
+					(reference "#PWR058")
 					(unit 1)
 				)
 			)
@@ -13101,7 +12884,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D1.3mm_L11.0mm_LooseFit"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
 			(at 181.61 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -13158,7 +12941,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "418fce70-002c-49bf-b929-2c1d0b3812ae")
-		(property "Reference" "#PWR070"
+		(property "Reference" "#PWR019"
 			(at 68.58 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -13218,7 +13001,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR070")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -13257,7 +13040,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 29.972 52.07 90)
 			(hide yes)
 			(show_name no)
@@ -13317,7 +13100,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "43d9df62-1bdd-4cbd-ae02-248d61bc8cd3")
-		(property "Reference" "Q1"
+		(property "Reference" "Q2"
 			(at 154.94 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13397,7 +13180,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "Q1")
+					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -13415,7 +13198,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "453df1aa-f5f3-4bef-8272-71297b525d58")
-		(property "Reference" "C1"
+		(property "Reference" "C5"
 			(at 46.99 92.7099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13437,7 +13220,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 44.1452 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -13479,7 +13262,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C1")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -13496,7 +13279,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "465375f4-e140-49d0-b50c-dbadbf9b56de")
-		(property "Reference" "#PWR048"
+		(property "Reference" "#PWR064"
 			(at 345.44 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -13556,7 +13339,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR048")
+					(reference "#PWR064")
 					(unit 1)
 				)
 			)
@@ -13574,7 +13357,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4b80766a-3aba-4c05-bb68-f1445e49205e")
-		(property "Reference" "#PWR030"
+		(property "Reference" "#PWR022"
 			(at 83.82 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -13634,7 +13417,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR030")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -13651,7 +13434,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4c266b6e-7b7e-436c-a913-f46c1f0277a3")
-		(property "Reference" "C17"
+		(property "Reference" "C11"
 			(at 85.09 171.45 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13673,7 +13456,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 82.8548 165.1 0)
 			(hide yes)
 			(show_name no)
@@ -13715,7 +13498,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C17")
+					(reference "C11")
 					(unit 1)
 				)
 			)
@@ -13733,7 +13516,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4e0ba29c-e704-4343-b7b9-3ed3b84dd586")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR028"
 			(at 139.7 255.27 0)
 			(hide yes)
 			(show_name no)
@@ -13793,7 +13576,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR023")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -13810,7 +13593,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4faa61ec-6405-40e7-8425-b1b2313f28f0")
-		(property "Reference" "R22"
+		(property "Reference" "R21"
 			(at 236.22 257.8099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13832,7 +13615,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 231.902 259.08 90)
 			(hide yes)
 			(show_name no)
@@ -13874,7 +13657,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R22")
+					(reference "R21")
 					(unit 1)
 				)
 			)
@@ -13969,7 +13752,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "512465e1-fe67-4385-8b25-a783b32622b3")
-		(property "Reference" "R21"
+		(property "Reference" "R18"
 			(at 227.33 260.3499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13991,7 +13774,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 223.012 261.62 90)
 			(hide yes)
 			(show_name no)
@@ -14033,7 +13816,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R21")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -14051,7 +13834,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5315369c-f342-4931-87b0-f16a0aa9771f")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR038"
 			(at 181.61 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -14111,7 +13894,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR024")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -14128,7 +13911,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "562aeed2-ce63-412b-ae58-d6340f6689e3")
-		(property "Reference" "R31"
+		(property "Reference" "R29"
 			(at 320.04 201.93 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14150,7 +13933,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 323.342 203.2 90)
 			(hide yes)
 			(show_name no)
@@ -14192,7 +13975,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R31")
+					(reference "R29")
 					(unit 1)
 				)
 			)
@@ -14210,7 +13993,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "565f507a-0728-4944-9fd5-23a7ddcdd8e1")
-		(property "Reference" "#PWR045"
+		(property "Reference" "#PWR061"
 			(at 331.47 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -14270,7 +14053,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR045")
+					(reference "#PWR061")
 					(unit 1)
 				)
 			)
@@ -14288,7 +14071,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "56d7c5cd-bc41-43b8-b482-49c4eb513d3c")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR037"
 			(at 173.99 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -14348,7 +14131,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR021")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -14366,7 +14149,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "56f101f5-6671-4449-aac1-51dc2cab26a7")
-		(property "Reference" "#PWR042"
+		(property "Reference" "#PWR049"
 			(at 278.13 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -14426,7 +14209,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR042")
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -14444,7 +14227,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "57b10102-bc04-465c-92c4-33d2c8dcdc6d")
-		(property "Reference" "R5"
+		(property "Reference" "R9"
 			(at 85.09 86.3599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14466,7 +14249,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 80.772 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -14508,7 +14291,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R5")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -14526,7 +14309,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5db612e4-9de3-4522-9160-cb40b3c54a36")
-		(property "Reference" "#PWR054"
+		(property "Reference" "#PWR055"
 			(at 307.34 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -14586,7 +14369,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR054")
+					(reference "#PWR055")
 					(unit 1)
 				)
 			)
@@ -14603,7 +14386,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "62464b15-25f0-467e-9eb7-381a8e6a7aca")
-		(property "Reference" "C13"
+		(property "Reference" "C14"
 			(at 140.97 246.38 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14625,7 +14408,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 138.7348 240.03 0)
 			(hide yes)
 			(show_name no)
@@ -14667,7 +14450,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C13")
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -14685,7 +14468,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "63247269-b89f-4989-9a7b-c903fe575b1b")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR024"
 			(at 104.14 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -14745,7 +14528,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR013")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -14842,7 +14625,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6798e862-47be-4edd-88c4-4fdb1c8f2917")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR015"
 			(at 62.23 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -14902,7 +14685,87 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR09")
+					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:SS32")
+		(at 254 242.57 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "687ddecd-aa2a-4fe1-ab87-be7ab5d04bbd")
+		(property "Reference" "D4"
+			(at 254.3175 236.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SS32"
+			(at 254.3175 238.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 254 238.125 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/88751/ss32.pdf"
+			(at 254 242.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "20V 3A Schottky Diode, SMA"
+			(at 254 242.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "004de84e-e3ec-4578-b2a5-66bf650f5d08")
+		)
+		(pin "1"
+			(uuid "9b1fc205-b9c6-48cf-8e07-8ac0688684d9")
+		)
+		(instances
+			(project "Power_bank_PCB"
+				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -14920,7 +14783,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6ec5351e-11c1-427c-8cd3-c618af09b299")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR063"
 			(at 337.82 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -14980,7 +14843,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR047")
+					(reference "#PWR063")
 					(unit 1)
 				)
 			)
@@ -14998,7 +14861,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6ef1d7e4-8b39-4b74-a9a1-397ad5399aeb")
-		(property "Reference" "#PWR052"
+		(property "Reference" "#PWR068"
 			(at 368.3 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -15059,7 +14922,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR052")
+					(reference "#PWR068")
 					(unit 1)
 				)
 			)
@@ -15076,7 +14939,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "71fa7db1-8af5-4b54-aa60-9ae042c57624")
-		(property "Reference" "R32"
+		(property "Reference" "R28"
 			(at 309.88 227.33 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15098,7 +14961,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 313.182 228.6 90)
 			(hide yes)
 			(show_name no)
@@ -15140,7 +15003,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R32")
+					(reference "R28")
 					(unit 1)
 				)
 			)
@@ -15158,7 +15021,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7511f050-357f-4ce5-9807-1f121b8d5068")
-		(property "Reference" "#PWR060"
+		(property "Reference" "#PWR040"
 			(at 201.93 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -15218,7 +15081,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR060")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -15236,7 +15099,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "792838a2-6702-4fc6-90be-4e44905384c2")
-		(property "Reference" "R11"
+		(property "Reference" "R17"
 			(at 171.45 67.3099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15258,7 +15121,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 167.132 68.58 90)
 			(hide yes)
 			(show_name no)
@@ -15300,7 +15163,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R11")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -15317,7 +15180,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "79326892-1a4d-4e17-8cea-92a2ae125f45")
-		(property "Reference" "R26"
+		(property "Reference" "R20"
 			(at 231.14 240.0299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15339,7 +15202,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 226.822 241.3 90)
 			(hide yes)
 			(show_name no)
@@ -15381,7 +15244,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R26")
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -15420,7 +15283,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 36.322 50.8 90)
 			(hide yes)
 			(show_name no)
@@ -15480,7 +15343,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7b4ed2c6-10d3-4ab9-adb3-f3896818ecac")
-		(property "Reference" "#PWR049"
+		(property "Reference" "#PWR065"
 			(at 345.44 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -15540,7 +15403,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR049")
+					(reference "#PWR065")
 					(unit 1)
 				)
 			)
@@ -15558,7 +15421,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7bb06afd-b872-4547-a915-3ed1a62a90ba")
-		(property "Reference" "C7"
+		(property "Reference" "C12"
 			(at 119.38 63.4999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15580,7 +15443,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 116.5352 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -15622,7 +15485,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C7")
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -15639,7 +15502,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7c0b48a6-808b-4071-addf-b9eacdd95e34")
-		(property "Reference" "#PWR056"
+		(property "Reference" "#PWR017"
 			(at 68.58 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -15699,7 +15562,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR056")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -15716,7 +15579,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7df95902-9d75-4cd0-8e1b-f4735ac97885")
-		(property "Reference" "C24"
+		(property "Reference" "C27"
 			(at 325.12 39.37 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15738,7 +15601,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 322.8848 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -15780,7 +15643,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C24")
+					(reference "C27")
 					(unit 1)
 				)
 			)
@@ -15797,7 +15660,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7e21f05e-1af2-45ef-9dce-90748bb3b2fd")
-		(property "Reference" "C28"
+		(property "Reference" "C22"
 			(at 279.4 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15819,7 +15682,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 277.1648 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -15861,7 +15724,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C28")
+					(reference "C22")
 					(unit 1)
 				)
 			)
@@ -15879,7 +15742,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7e517348-a4d4-4edd-8349-c2d9426243ef")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR036"
 			(at 168.91 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -15939,7 +15802,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR018")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
@@ -15956,7 +15819,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "822fabf2-2fd5-405e-b3b3-25a8466fdce2")
-		(property "Reference" "R12"
+		(property "Reference" "R6"
 			(at 72.39 167.6399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15978,7 +15841,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 68.072 168.91 90)
 			(hide yes)
 			(show_name no)
@@ -16020,7 +15883,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R12")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -16038,7 +15901,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "832ef44d-5c70-4994-8690-6f4fbde752b7")
-		(property "Reference" "Q4"
+		(property "Reference" "Q3"
 			(at 280.67 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16108,7 +15971,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "Q4")
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -16125,7 +15988,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "838e0a18-7c08-4bec-bdd5-021f3e210451")
-		(property "Reference" "C5"
+		(property "Reference" "C6"
 			(at 45.72 254 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16147,7 +16010,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 43.4848 247.65 0)
 			(hide yes)
 			(show_name no)
@@ -16189,7 +16052,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C5")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -16206,7 +16069,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8419d128-b02b-4bae-b51a-b233128d16ad")
-		(property "Reference" "#PWR027"
+		(property "Reference" "#PWR031"
 			(at 156.21 234.95 0)
 			(hide yes)
 			(show_name no)
@@ -16266,7 +16129,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR027")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -16283,7 +16146,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "851dfda1-0289-4658-b3b7-34ab7ff46150")
-		(property "Reference" "C23"
+		(property "Reference" "C26"
 			(at 314.96 39.37 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16305,7 +16168,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 312.7248 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -16347,87 +16210,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C23")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Schottky")
-		(at 254 242.57 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "85a14bd7-712f-4ceb-8048-70ae1016e30d")
-		(property "Reference" "D3"
-			(at 254.3175 236.22 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "D_Schottky"
-			(at 254.3175 238.76 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 254 242.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 254 242.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Schottky diode"
-			(at 254 242.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "be9f7611-3876-44f8-afff-f4f9f17d62f5")
-		)
-		(pin "1"
-			(uuid "38b459ae-6268-4405-af4d-1af1640d5fea")
-		)
-		(instances
-			(project "Power_bank_PCB"
-				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "D3")
+					(reference "C26")
 					(unit 1)
 				)
 			)
@@ -16445,7 +16228,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "85e49002-4db7-4e1d-8a54-ff14a73aaedb")
-		(property "Reference" "J3"
+		(property "Reference" "J1"
 			(at 209.55 232.41 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16522,7 +16305,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "J3")
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -16539,7 +16322,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "87722822-a9e3-403e-b9c2-e0bde358e564")
-		(property "Reference" "#PWR038"
+		(property "Reference" "#PWR052"
 			(at 295.91 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -16599,7 +16382,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR038")
+					(reference "#PWR052")
 					(unit 1)
 				)
 			)
@@ -16617,7 +16400,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "888a22ca-250b-4971-bfd3-eb60c46e0bda")
-		(property "Reference" "#PWR029"
+		(property "Reference" "#PWR020"
 			(at 69.85 186.69 0)
 			(hide yes)
 			(show_name no)
@@ -16677,7 +16460,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR029")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -16695,7 +16478,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "89e75c90-42a5-4a28-aa2c-a9aa4102e1bb")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR027"
 			(at 129.54 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -16755,7 +16538,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR031")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -16772,7 +16555,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8b4b60c6-e4a7-4892-b9dd-aced8e29a47a")
-		(property "Reference" "R10"
+		(property "Reference" "R14"
 			(at 133.35 242.5699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16794,7 +16577,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 129.032 243.84 90)
 			(hide yes)
 			(show_name no)
@@ -16836,7 +16619,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R10")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -16854,7 +16637,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8c2e13af-a44a-4671-bb47-cd34242c8316")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR014"
 			(at 58.42 269.24 0)
 			(hide yes)
 			(show_name no)
@@ -16914,7 +16697,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR012")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -16931,7 +16714,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8c8345b2-b216-428a-8406-970b6d76ddcf")
-		(property "Reference" "C15"
+		(property "Reference" "C16"
 			(at 147.32 246.38 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16953,7 +16736,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 150.1648 240.03 0)
 			(hide yes)
 			(show_name no)
@@ -16995,7 +16778,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C15")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -17107,7 +16890,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8d843e5b-83ec-4f7c-b0bb-bbd11eecf8be")
-		(property "Reference" "TP5"
+		(property "Reference" "TP7"
 			(at 336.55 100.33 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17129,7 +16912,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D1.3mm_L11.0mm_LooseFit"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
 			(at 335.28 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -17168,87 +16951,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "TP5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Schottky")
-		(at 62.23 34.29 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8da1a22e-c69b-4b71-8fbc-7f3d64204c0f")
-		(property "Reference" "D4"
-			(at 61.9125 27.94 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "D_Schottky"
-			(at 61.9125 30.48 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 62.23 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 62.23 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Schottky diode"
-			(at 62.23 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "cfb1e339-0fde-4f66-a79c-55058cb3ce91")
-		)
-		(pin "1"
-			(uuid "d3e7c20a-2f63-4e23-afa8-2b45d9d3c42e")
-		)
-		(instances
-			(project "Power_bank_PCB"
-				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "D4")
+					(reference "TP7")
 					(unit 1)
 				)
 			)
@@ -17266,7 +16969,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8f63aafb-6cd7-4879-a28a-78ef5f033b0b")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR026"
 			(at 118.11 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -17326,7 +17029,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR016")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -17343,7 +17046,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "93b70688-7778-4fd4-b072-9777b2bf9ea4")
-		(property "Reference" "TP10"
+		(property "Reference" "TP12"
 			(at 383.54 68.58 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17365,7 +17068,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D1.3mm_L11.0mm_LooseFit"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
 			(at 381 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -17404,7 +17107,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "TP10")
+					(reference "TP12")
 					(unit 1)
 				)
 			)
@@ -17421,7 +17124,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9654df29-5f99-49f5-87f7-2d7581561346")
-		(property "Reference" "TP6"
+		(property "Reference" "TP8"
 			(at 365.76 71.12 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17443,7 +17146,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D1.3mm_L11.0mm_LooseFit"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
 			(at 364.49 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -17482,7 +17185,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "TP6")
+					(reference "TP8")
 					(unit 1)
 				)
 			)
@@ -17521,7 +17224,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D1.3mm_L11.0mm_LooseFit"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
 			(at 137.16 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -17578,7 +17281,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "974d82dc-51a1-40aa-a152-d8b7896e6df4")
-		(property "Reference" "R20"
+		(property "Reference" "R31"
 			(at 349.25 195.5799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17600,7 +17303,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 344.932 196.85 90)
 			(hide yes)
 			(show_name no)
@@ -17642,7 +17345,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R20")
+					(reference "R31")
 					(unit 1)
 				)
 			)
@@ -17659,7 +17362,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9ab00982-3ed5-40de-ac91-2f0dec9b4a75")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR02"
 			(at 34.29 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -17719,7 +17422,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR017")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -17736,7 +17439,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9f9d3d71-a2b3-4a0a-ad17-50f66f8c6454")
-		(property "Reference" "C18"
+		(property "Reference" "C15"
 			(at 152.4 163.83 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17758,7 +17461,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 150.1648 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -17800,7 +17503,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C18")
+					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -17817,7 +17520,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a2ca3aa8-03f5-4923-b99d-5284f26f3878")
-		(property "Reference" "C9"
+		(property "Reference" "C2"
 			(at 29.21 163.83 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17839,7 +17542,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 33.3248 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -17881,7 +17584,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C9")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -17898,7 +17601,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ad50e15e-f0b5-436c-93ce-7f45b08e4c41")
-		(property "Reference" "R28"
+		(property "Reference" "R26"
 			(at 279.4 24.1299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17920,7 +17623,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 275.082 25.4 90)
 			(hide yes)
 			(show_name no)
@@ -17962,7 +17665,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R28")
+					(reference "R26")
 					(unit 1)
 				)
 			)
@@ -17980,7 +17683,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ade95148-ed24-49eb-a64d-43adafdb6d7d")
-		(property "Reference" "C27"
+		(property "Reference" "C30"
 			(at 359.41 168.91 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18000,7 +17703,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 363.22 175.5648 0)
 			(hide yes)
 			(show_name no)
@@ -18042,7 +17745,85 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C27")
+					(reference "C30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 316.23 182.88 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b03dc633-cb80-48a0-92e1-db6a0d70d944")
+		(property "Reference" "TP4"
+			(at 314.96 180.34 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Panel_power"
+			(at 311.15 182.88 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
+			(at 316.23 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 316.23 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 316.23 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ef9ef4fa-cbb0-457f-b27d-75546f36fd3d")
+		)
+		(instances
+			(project "Power_bank_PCB"
+				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
+					(reference "TP4")
 					(unit 1)
 				)
 			)
@@ -18060,7 +17841,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b553e184-6f62-4761-9372-90a7ff2a9744")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR016"
 			(at 64.77 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -18120,7 +17901,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR010")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -18137,7 +17918,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b5f6d0c0-0839-40e4-a5ea-1359c8c808ea")
-		(property "Reference" "C21"
+		(property "Reference" "C24"
 			(at 297.18 39.37 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18159,7 +17940,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 294.9448 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -18201,7 +17982,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C21")
+					(reference "C24")
 					(unit 1)
 				)
 			)
@@ -18209,7 +17990,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 276.86 52.07 0)
+		(at 276.86 44.45 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -18219,8 +18000,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b5fae159-be87-4a90-95ae-0cb2f817eae4")
-		(property "Reference" "#PWR064"
-			(at 276.86 58.42 0)
+		(property "Reference" "#PWR048"
+			(at 276.86 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18231,7 +18012,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 276.86 57.15 0)
+			(at 276.86 49.53 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18241,7 +18022,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 276.86 52.07 0)
+			(at 276.86 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18252,7 +18033,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 276.86 52.07 0)
+			(at 276.86 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18263,7 +18044,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 276.86 52.07 0)
+			(at 276.86 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18279,7 +18060,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR064")
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -18318,7 +18099,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
 			(at 38.1 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -18389,7 +18170,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b8092e94-378a-4b87-a927-688044620088")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR025"
 			(at 115.57 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -18449,7 +18230,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR015")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -18466,7 +18247,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b815164e-4111-4196-8fe1-d287a1c80287")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR01"
 			(at 33.02 257.81 0)
 			(hide yes)
 			(show_name no)
@@ -18526,7 +18307,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR02")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -18543,7 +18324,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b9eb9c3a-1abf-46b9-b883-5c5898d20a9f")
-		(property "Reference" "R16"
+		(property "Reference" "R25"
 			(at 265.43 67.31 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18565,7 +18346,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 270.002 69.85 90)
 			(hide yes)
 			(show_name no)
@@ -18607,7 +18388,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R16")
+					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -18624,7 +18405,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bc6ea7fa-95dc-44cd-bc3c-4abfc606b52e")
-		(property "Reference" "R19"
+		(property "Reference" "R30"
 			(at 328.93 201.93 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18646,7 +18427,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 332.232 203.2 90)
 			(hide yes)
 			(show_name no)
@@ -18688,7 +18469,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R19")
+					(reference "R30")
 					(unit 1)
 				)
 			)
@@ -18705,7 +18486,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bd14bb9b-61e7-4cf3-a34b-bd0943c16bb9")
-		(property "Reference" "C10u"
+		(property "Reference" "C21"
 			(at 203.2 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18727,7 +18508,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 200.9648 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -18769,86 +18550,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C10u")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Screw_Terminal_01x02")
-		(at 311.15 185.42 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "bdd93a5e-45a4-4f5a-9d9e-6c8eadb16e32")
-		(property "Reference" "J1"
-			(at 316.23 187.96 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Fotopanel_connector"
-			(at 308.61 190.5 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 311.15 185.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 311.15 185.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 311.15 185.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "afa1d2bb-c346-42ed-940f-1e5b41a92308")
-		)
-		(pin "1"
-			(uuid "8fd11ed2-602c-448f-b934-83dd79b954ea")
-		)
-		(instances
-			(project "Power_bank_PCB"
-				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "J1")
+					(reference "C21")
 					(unit 1)
 				)
 			)
@@ -18866,7 +18568,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bdf79b88-a94f-4531-8314-b6eb4f44e6bc")
-		(property "Reference" "#PWR067"
+		(property "Reference" "#PWR060"
 			(at 325.12 236.22 0)
 			(hide yes)
 			(show_name no)
@@ -18926,7 +18628,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR067")
+					(reference "#PWR060")
 					(unit 1)
 				)
 			)
@@ -18944,7 +18646,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "beaab715-afec-4c6d-a1a2-18b343e860ea")
-		(property "Reference" "U4"
+		(property "Reference" "U5"
 			(at 333.6133 83.82 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19063,7 +18765,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "U4")
+					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -19080,7 +18782,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bf3a0f89-efc7-433c-966a-a008914a278e")
-		(property "Reference" "Q6"
+		(property "Reference" "Q1"
 			(at 86.36 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19150,7 +18852,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "Q6")
+					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -19168,7 +18870,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c0684e11-7c9b-4ae0-9559-7cee94a482dd")
-		(property "Reference" "#PWR065"
+		(property "Reference" "#PWR051"
 			(at 287.02 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -19228,7 +18930,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR065")
+					(reference "#PWR051")
 					(unit 1)
 				)
 			)
@@ -19267,7 +18969,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 70.612 238.76 90)
 			(hide yes)
 			(show_name no)
@@ -19327,7 +19029,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c1923ac8-66e2-443a-b3d1-41da3128029e")
-		(property "Reference" "#PWR061"
+		(property "Reference" "#PWR039"
 			(at 199.39 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -19387,7 +19089,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR061")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -19404,7 +19106,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c215b197-bcff-4ff8-bf98-aeabc9f0a3c9")
-		(property "Reference" "C25"
+		(property "Reference" "C28"
 			(at 339.09 39.37 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19426,7 +19128,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 336.8548 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -19468,7 +19170,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C25")
+					(reference "C28")
 					(unit 1)
 				)
 			)
@@ -19486,7 +19188,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c2b8e2c3-1c16-44f7-8282-3dcc0c8faff5")
-		(property "Reference" "R9"
+		(property "Reference" "R15"
 			(at 139.7 52.0699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19508,7 +19210,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 135.382 53.34 90)
 			(hide yes)
 			(show_name no)
@@ -19550,7 +19252,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R9")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -19589,7 +19291,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
 			(at 31.75 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -19659,7 +19361,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c33280c6-ceed-41f9-be1a-c71afdae9859")
-		(property "Reference" "C14"
+		(property "Reference" "C9"
 			(at 55.88 171.45 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19681,7 +19383,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 53.6448 165.1 0)
 			(hide yes)
 			(show_name no)
@@ -19723,7 +19425,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C14")
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -19741,7 +19443,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c4471f0e-192c-4a98-bdf6-7e4142167e86")
-		(property "Reference" "Q3"
+		(property "Reference" "Q6"
 			(at 350.52 210.8201 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19811,7 +19513,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "Q3")
+					(reference "Q6")
 					(unit 1)
 				)
 			)
@@ -19828,7 +19530,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c5fe7aa2-628c-4eb1-97e6-1833e545e9b7")
-		(property "Reference" "C2"
+		(property "Reference" "C1"
 			(at 27.94 246.38 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19850,7 +19552,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 32.0548 240.03 0)
 			(hide yes)
 			(show_name no)
@@ -19892,7 +19594,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C2")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -19910,7 +19612,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c77c11bd-8e08-4946-9afa-bb268a6dacd4")
-		(property "Reference" "#PWR032"
+		(property "Reference" "#PWR029"
 			(at 151.13 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -19970,7 +19672,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR032")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -19988,7 +19690,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c8b1fb84-641a-4561-a057-66e5c60263cd")
-		(property "Reference" "R7"
+		(property "Reference" "R13"
 			(at 106.68 63.4999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20010,7 +19712,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 102.362 64.77 90)
 			(hide yes)
 			(show_name no)
@@ -20052,7 +19754,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R7")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -20070,7 +19772,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c8eee2a6-8849-490f-b270-1b4e44b9cb81")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR011"
 			(at 50.8 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -20130,7 +19832,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR03")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -20148,7 +19850,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c997e68d-26a7-4fb2-ac3a-aeea03f60924")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR018"
 			(at 68.58 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -20208,7 +19910,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR011")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -20226,7 +19928,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cb65b063-8bfc-4f51-ab47-395f788a3f7e")
-		(property "Reference" "#PWR062"
+		(property "Reference" "#PWR042"
 			(at 228.6 251.46 0)
 			(hide yes)
 			(show_name no)
@@ -20286,7 +19988,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR062")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -20304,7 +20006,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ccd95d30-8026-455b-a029-107974039421")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR010"
 			(at 46.99 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -20364,7 +20066,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR07")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -20458,7 +20160,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cd4c55e7-6510-4a19-82b7-aee18e47aa85")
-		(property "Reference" "Q2"
+		(property "Reference" "Q5"
 			(at 337.82 217.17 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20528,7 +20230,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "Q2")
+					(reference "Q5")
 					(unit 1)
 				)
 			)
@@ -20545,7 +20247,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cde0ab90-154e-4aa2-838a-bc2a70d651b4")
-		(property "Reference" "R27"
+		(property "Reference" "R24"
 			(at 256.54 134.6199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20567,7 +20269,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 252.222 135.89 90)
 			(hide yes)
 			(show_name no)
@@ -20609,7 +20311,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R27")
+					(reference "R24")
 					(unit 1)
 				)
 			)
@@ -20626,7 +20328,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ce237262-3383-48d7-b015-82f3bb6c40f2")
-		(property "Reference" "C8"
+		(property "Reference" "C13"
 			(at 130.81 60.96 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20648,7 +20350,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 136.1948 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -20690,7 +20392,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C8")
+					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -20708,7 +20410,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cf8e6f5d-ca06-4d06-b6d9-75e1c309427a")
-		(property "Reference" "#PWR068"
+		(property "Reference" "#PWR057"
 			(at 314.96 240.03 0)
 			(hide yes)
 			(show_name no)
@@ -20768,7 +20470,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR068")
+					(reference "#PWR057")
 					(unit 1)
 				)
 			)
@@ -20786,7 +20488,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d32b44eb-13ec-4e20-9148-f71bbdf3cd27")
-		(property "Reference" "#PWR046"
+		(property "Reference" "#PWR062"
 			(at 334.01 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -20846,7 +20548,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR046")
+					(reference "#PWR062")
 					(unit 1)
 				)
 			)
@@ -20864,7 +20566,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d4658be8-941a-4f67-8f1c-7892423a36cb")
-		(property "Reference" "U6"
+		(property "Reference" "U4"
 			(at 229.4733 137.16 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20943,7 +20645,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "U6")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -21038,7 +20740,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d848d780-e2dd-42b9-b23b-d4e7af1d9cee")
-		(property "Reference" "TP4"
+		(property "Reference" "TP6"
 			(at 336.55 93.98 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21060,7 +20762,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D1.3mm_L11.0mm_LooseFit"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
 			(at 335.28 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -21099,7 +20801,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "TP4")
+					(reference "TP6")
 					(unit 1)
 				)
 			)
@@ -21116,7 +20818,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "da84745e-f6ee-422a-bc6d-5fdd07edb947")
-		(property "Reference" "R23"
+		(property "Reference" "R22"
 			(at 245.11 251.4599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21138,7 +20840,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 240.792 252.73 90)
 			(hide yes)
 			(show_name no)
@@ -21180,7 +20882,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R23")
+					(reference "R22")
 					(unit 1)
 				)
 			)
@@ -21275,7 +20977,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "dc07e0d2-7b8e-4a6f-af8f-3de5bd326e47")
-		(property "Reference" "TP7"
+		(property "Reference" "TP9"
 			(at 365.76 78.74 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21297,7 +20999,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D1.3mm_L11.0mm_LooseFit"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
 			(at 364.49 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -21336,7 +21038,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "TP7")
+					(reference "TP9")
 					(unit 1)
 				)
 			)
@@ -21353,7 +21055,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ddabcf5b-707b-4f20-b5aa-46765fcaedc8")
-		(property "Reference" "C6"
+		(property "Reference" "C10"
 			(at 73.66 254 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21375,7 +21077,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 71.4248 247.65 0)
 			(hide yes)
 			(show_name no)
@@ -21417,7 +21119,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C6")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -21435,7 +21137,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ddc62b9e-82c7-46bb-92de-1dce991763e0")
-		(property "Reference" "R6"
+		(property "Reference" "R12"
 			(at 106.68 53.3399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21457,7 +21159,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 102.362 54.61 90)
 			(hide yes)
 			(show_name no)
@@ -21499,7 +21201,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R6")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -21517,7 +21219,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dea0c63c-f74e-4c64-b3ca-4530b534aedd")
-		(property "Reference" "R29"
+		(property "Reference" "R5"
 			(at 71.12 81.2799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21539,7 +21241,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 66.802 82.55 90)
 			(hide yes)
 			(show_name no)
@@ -21581,7 +21283,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R29")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -21599,7 +21301,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "df6b2bed-32ca-4194-831f-8577186a4bc3")
-		(property "Reference" "#PWR053"
+		(property "Reference" "#PWR069"
 			(at 368.3 215.9 0)
 			(hide yes)
 			(show_name no)
@@ -21659,7 +21361,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR053")
+					(reference "#PWR069")
 					(unit 1)
 				)
 			)
@@ -21676,7 +21378,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "df6b5155-9cc2-4793-bb21-975e6c0905b9")
-		(property "Reference" "C11"
+		(property "Reference" "C20"
 			(at 167.64 52.07 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21698,7 +21400,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 174.9552 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -21740,7 +21442,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C11")
+					(reference "C20")
 					(unit 1)
 				)
 			)
@@ -21779,7 +21481,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D1.3mm_L11.0mm_LooseFit"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
 			(at 300.99 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -22108,7 +21810,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e2eccd7d-349e-4a23-8b94-d5b6973e2efc")
-		(property "Reference" "#PWR020"
+		(property "Reference" "#PWR06"
 			(at 40.64 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -22168,7 +21870,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR020")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -22186,7 +21888,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e42b6b6d-1630-406f-867a-ec787300c4ae")
-		(property "Reference" "#PWR069"
+		(property "Reference" "#PWR023"
 			(at 95.25 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -22246,7 +21948,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR069")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -22264,7 +21966,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e4a3f7ae-a5d6-4ed0-8b7e-e1d053ee8993")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR04"
 			(at 39.37 262.89 0)
 			(hide yes)
 			(show_name no)
@@ -22324,7 +22026,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR06")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -22342,7 +22044,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e52e35a3-f486-4e48-9951-6cd2878d6f93")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR021"
 			(at 72.39 262.89 0)
 			(hide yes)
 			(show_name no)
@@ -22402,7 +22104,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR014")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -22420,7 +22122,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e8df7120-bbfd-43d5-8590-2a85fa99a7ae")
-		(property "Reference" "#PWR039"
+		(property "Reference" "#PWR053"
 			(at 295.91 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -22480,7 +22182,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR039")
+					(reference "#PWR053")
 					(unit 1)
 				)
 			)
@@ -22497,7 +22199,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e9fc3a4f-3bcb-414d-8130-3b8f0d6c2997")
-		(property "Reference" "C12"
+		(property "Reference" "C7"
 			(at 46.99 171.45 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22519,7 +22221,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 44.7548 165.1 0)
 			(hide yes)
 			(show_name no)
@@ -22561,7 +22263,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C12")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -22578,7 +22280,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ea9f0499-d6b0-4a6e-88d3-30c7b14647e3")
-		(property "Reference" "R13"
+		(property "Reference" "R7"
 			(at 72.39 175.2599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22600,7 +22302,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 68.072 176.53 90)
 			(hide yes)
 			(show_name no)
@@ -22642,7 +22344,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R13")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -22660,7 +22362,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "eaa12017-3cd7-4383-bbfb-50705a941d62")
-		(property "Reference" "#PWR055"
+		(property "Reference" "#PWR043"
 			(at 233.68 275.59 0)
 			(hide yes)
 			(show_name no)
@@ -22720,7 +22422,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR055")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -22737,7 +22439,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "eb4f99e2-98a2-4825-8649-f13419a0b107")
-		(property "Reference" "C22"
+		(property "Reference" "C25"
 			(at 306.07 39.37 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22759,7 +22461,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 303.8348 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -22801,7 +22503,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C22")
+					(reference "C25")
 					(unit 1)
 				)
 			)
@@ -22818,7 +22520,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ee0ecad0-7747-4e3b-b00f-edf34205f3a2")
-		(property "Reference" "TP9"
+		(property "Reference" "TP11"
 			(at 383.54 60.96 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22840,7 +22542,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Pin:Pin_D1.3mm_L11.0mm_LooseFit"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
 			(at 381 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -22879,7 +22581,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "TP9")
+					(reference "TP11")
 					(unit 1)
 				)
 			)
@@ -22897,7 +22599,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ee5bb5c8-1c06-4cf1-aa72-01f55adc51a2")
-		(property "Reference" "#PWR059"
+		(property "Reference" "#PWR041"
 			(at 227.33 146.05 0)
 			(hide yes)
 			(show_name no)
@@ -22957,7 +22659,85 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR059")
+					(reference "#PWR041")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 316.23 185.42 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ef1f06b4-cd15-4a5e-81c4-c032c537c046")
+		(property "Reference" "TP5"
+			(at 314.96 187.96 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Panel_gnd"
+			(at 311.15 185.42 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
+			(at 316.23 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 316.23 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 316.23 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7340949f-2c36-4446-98bc-82980e8f94c7")
+		)
+		(instances
+			(project "Power_bank_PCB"
+				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
+					(reference "TP5")
 					(unit 1)
 				)
 			)
@@ -22974,7 +22754,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f024e151-d4dc-45be-bf13-cd4cd2a9513c")
-		(property "Reference" "#PWR019"
+		(property "Reference" "#PWR05"
 			(at 40.64 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -23034,7 +22814,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR019")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -23052,7 +22832,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f082204d-6013-4a29-ae90-8a73762d859d")
-		(property "Reference" "#PWR063"
+		(property "Reference" "#PWR044"
 			(at 254 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -23112,7 +22892,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR063")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -23130,7 +22910,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f4dc2a1d-a2ae-4e4b-955d-a7750f5574c2")
-		(property "Reference" "#PWR040"
+		(property "Reference" "#PWR054"
 			(at 304.8 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -23190,7 +22970,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR040")
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
@@ -23229,7 +23009,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 38.4048 247.65 0)
 			(hide yes)
 			(show_name no)
@@ -23288,7 +23068,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f6719d42-810b-4a04-b0a8-71845f94d656")
-		(property "Reference" "R14"
+		(property "Reference" "R10"
 			(at 86.36 154.9399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23310,7 +23090,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 82.042 156.21 90)
 			(hide yes)
 			(show_name no)
@@ -23352,7 +23132,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "R14")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -23379,7 +23159,7 @@
 				)
 			)
 		)
-		(property "Value" "1u"
+		(property "Value" "1u / XEL5030-102"
 			(at 227.33 110.49 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23389,7 +23169,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_Coilcraft_XAL5030-XXX"
 			(at 227.33 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -23449,7 +23229,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fa4a9882-4d7d-48e9-8bdd-a68b782ff67d")
-		(property "Reference" "#PWR050"
+		(property "Reference" "#PWR066"
 			(at 355.6 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -23509,7 +23289,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR050")
+					(reference "#PWR066")
 					(unit 1)
 				)
 			)
@@ -23526,7 +23306,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "faebd8de-edb5-4012-b387-9a7a03182af9")
-		(property "Reference" "#PWR057"
+		(property "Reference" "#PWR046"
 			(at 271.78 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -23586,7 +23366,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR057")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -23603,7 +23383,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "fc622227-4736-4793-a864-01b567738626")
-		(property "Reference" "#PWR037"
+		(property "Reference" "#PWR050"
 			(at 283.21 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -23663,7 +23443,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "#PWR037")
+					(reference "#PWR050")
 					(unit 1)
 				)
 			)
@@ -23680,7 +23460,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "fdaf4379-de94-49c2-9c40-dbcca156ec78")
-		(property "Reference" "C16"
+		(property "Reference" "C17"
 			(at 157.48 246.38 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23702,7 +23482,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 155.2448 240.03 0)
 			(hide yes)
 			(show_name no)
@@ -23744,7 +23524,7 @@
 		(instances
 			(project "Power_bank_PCB"
 				(path "/88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
-					(reference "C16")
+					(reference "C17")
 					(unit 1)
 				)
 			)
