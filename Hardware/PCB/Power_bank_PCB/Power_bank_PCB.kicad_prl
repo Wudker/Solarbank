@@ -33,8 +33,6 @@
       "vias",
       "footprint_text",
       "footprint_anchors",
-      "ratsnest",
-      "grid",
       "footprints_front",
       "footprints_back",
       "footprint_values",
@@ -53,7 +51,7 @@
       "board_outline_area",
       "ly_points"
     ],
-    "visible_layers": "ffffffff_ffffffff_ffffd575_f55555f5",
+    "visible_layers": "ffffffff_ffffffff_ffffd575_f75555f5",
     "zone_display_mode": 0
   },
   "git": {

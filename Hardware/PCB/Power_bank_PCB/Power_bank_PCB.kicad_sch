@@ -11983,8 +11983,8 @@
 				)
 			)
 		)
-		(property "Value" "1.5uH"
-			(at 139.7 153.67 0)
+		(property "Value" "1.5uH / XFL4020"
+			(at 143.51 144.78 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11993,7 +11993,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_Coilcraft_XAL4020-XXX"
 			(at 143.51 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -14555,8 +14555,8 @@
 				)
 			)
 		)
-		(property "Value" "1.5uH"
-			(at 128.27 236.22 0)
+		(property "Value" "1.5uH / XFL4020"
+			(at 134.62 227.33 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14565,7 +14565,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_Coilcraft_XAL4020-XXX"
 			(at 132.08 234.95 0)
 			(hide yes)
 			(show_name no)
