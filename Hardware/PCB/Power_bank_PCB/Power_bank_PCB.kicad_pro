@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
+          "drill": 0.3,
           "height": 0.6,
-          "width": 0.25
+          "width": 0.6
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -50,7 +50,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.0
+          "min_clearance": 0.1
         }
       },
       "diff_pair_dimensions": [
@@ -194,7 +194,9 @@
         }
       ],
       "track_widths": [
-        0.0
+        0.0,
+        0.2,
+        0.35
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -226,6 +228,14 @@
         {
           "diameter": 0.0,
           "drill": 0.0
+        },
+        {
+          "diameter": 0.2,
+          "drill": 0.1
+        },
+        {
+          "diameter": 0.35,
+          "drill": 0.2
         }
       ],
       "zones_allow_external_fillets": false
