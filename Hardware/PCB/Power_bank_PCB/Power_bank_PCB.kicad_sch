@@ -4,6 +4,13 @@
 	(generator_version "10.0")
 	(uuid "88f10dd7-9e09-4e00-9a4e-d9b8f571df2f")
 	(paper "A3")
+	(title_block
+		(title "SolarBank")
+		(date "2026-09-06")
+		(rev "V1")
+		(company "Bart Soul")
+		(comment 1 "Bartłomiej Dusza")
+	)
 	(lib_symbols
 		(symbol "8205A:8205A"
 			(exclude_from_sim no)
@@ -12155,7 +12162,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 367.03 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -12884,7 +12891,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 181.61 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -16912,7 +16919,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 335.28 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -17068,7 +17075,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 381 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -17146,7 +17153,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 364.49 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -17224,7 +17231,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 137.16 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -17784,7 +17791,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 316.23 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -20762,7 +20769,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 335.28 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -20999,7 +21006,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 364.49 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -21481,7 +21488,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 300.99 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -22542,7 +22549,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 381 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -22698,7 +22705,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D4.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 316.23 180.34 0)
 			(hide yes)
 			(show_name no)
