@@ -62,19 +62,7 @@
       ],
       "drc_exclusions": [
         [
-          "starved_thermal|100825000|51425000|06957cb2-53f2-4d4f-b272-3a79e89b2e57|db4726c0-8023-4faa-b13e-7e58640effba|F.Cu",
-          ""
-        ],
-        [
-          "starved_thermal|116000000|43646933|6242bb84-bba8-4dfe-b41a-2695ed8f9a77|2aa1c747-33f5-40c5-b5e5-8beb317fc4fc|F.Cu",
-          ""
-        ],
-        [
-          "starved_thermal|75270000|62875000|06957cb2-53f2-4d4f-b272-3a79e89b2e57|09125594-312b-4c34-997a-7ca6f09af085|F.Cu",
-          ""
-        ],
-        [
-          "starved_thermal|82675000|43714149|9a5f7c32-512f-4a06-9027-863eb2672524|4deacecc-63b9-4d0c-9ba8-f48328c99009|F.Cu",
+          "lib_footprint_mismatch|77107500|60400000|d86467ba-fbd7-4344-a3d0-b7988008cd75|00000000-0000-0000-0000-000000000000",
           ""
         ]
       ],
