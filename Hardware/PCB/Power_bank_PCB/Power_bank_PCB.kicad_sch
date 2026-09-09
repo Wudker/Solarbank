@@ -11990,7 +11990,7 @@
 				)
 			)
 		)
-		(property "Value" "1.5uH / XFL4020"
+		(property "Value" "1.5uH / XFL4020-152MEC"
 			(at 143.51 144.78 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14562,7 +14562,7 @@
 				)
 			)
 		)
-		(property "Value" "1.5uH / XFL4020"
+		(property "Value" "1.5uH / XFL4020-152MEC"
 			(at 134.62 227.33 0)
 			(show_name no)
 			(do_not_autoplace no)
