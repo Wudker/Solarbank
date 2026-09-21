@@ -69,6 +69,8 @@ void Error_Handler(void);
 #define LED_status_green_GPIO_Port GPIOB
 #define User_button_input_Pin GPIO_PIN_8
 #define User_button_input_GPIO_Port GPIOA
+#define USB_input_Pin GPIO_PIN_4
+#define USB_input_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
 

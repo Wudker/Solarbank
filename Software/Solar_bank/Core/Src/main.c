@@ -1,113 +1,50 @@
-/* USER CODE BEGIN Header */
-/**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2026 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
-/* USER CODE END Header */
-/* Includes ------------------------------------------------------------------*/
-#include "main.h"
+#include  "main.h"
+#include  "stm32u031xx.h"
+#include  "INA219.h"
 
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
-
-/* USER CODE END Includes */
-
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
-
-/* USER CODE END PTD */
-
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
-
-/* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
-
 I2C_HandleTypeDef hi2c1;
+INA219_t ina219;
 
-/* USER CODE BEGIN PV */
-
-/* USER CODE END PV */
-
-/* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_I2C1_Init(void);
-/* USER CODE BEGIN PFP */
 
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
-
-/**
-  * @brief  The application entry point.
-  * @retval int
-  */
 int main(void)
 {
-
-  /* USER CODE BEGIN 1 */
-
-  /* USER CODE END 1 */
-
-  /* MCU Configuration--------------------------------------------------------*/
-
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
-
-  /* Configure the system clock */
   SystemClock_Config();
-
-  /* USER CODE BEGIN SysInit */
-
-  /* USER CODE END SysInit */
-
-  /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_ADC1_Init();
   MX_I2C1_Init();
-  /* USER CODE BEGIN 2 */
+  INA219_Init(&ina219, &hi2c1, INA219_ADDRESS);
 
-  /* USER CODE END 2 */
-
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
+  double Value = INA219_ReadPower(&ina219)*1000.0; //Value in Wats
+  HAL_GPIO_WritePin(GPIOB,LED_status_green_Pin,GPIO_PIN_SET);
+  HAL_Delay(1000);
+  HAL_GPIO_WritePin(GPIOA,LED_status_orange_Pin,GPIO_PIN_SET);
+  HAL_Delay(1000);
+  HAL_GPIO_WritePin(GPIOA,LED_status_red_Pin,GPIO_PIN_SET);
+  HAL_Delay(1000);
+
+  HAL_GPIO_WritePin(GPIOA,LED_status_red_Pin,GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB,LED_status_green_Pin,GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA,LED_status_orange_Pin,GPIO_PIN_RESET);
+  HAL_Delay(1000);
+  if (Value > 0.1)
+  {
+    HAL_GPIO_WritePin(GPIOA, Fotopanel_enable_Pin, GPIO_PIN_SET);
   }
-  /* USER CODE END 3 */
+  else if (Value < 0.0)
+  {
+    HAL_GPIO_WritePin(GPIOA, Fotopanel_enable_Pin, GPIO_PIN_SET);
+  }
 }
-
+}
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -326,14 +263,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(User_button_input_GPIO_Port, &GPIO_InitStruct);
 
-  /* USER CODE BEGIN MX_GPIO_Init_2 */
-
-  /* USER CODE END MX_GPIO_Init_2 */
+  /*Configure GPIO pin : USB_input_Pin */
+  GPIO_InitStruct.Pin = USB_input_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(USB_input_GPIO_Port, &GPIO_InitStruct);
 }
-
-/* USER CODE BEGIN 4 */
-
-/* USER CODE END 4 */
 
 /**
   * @brief  This function is executed in case of error occurrence.
