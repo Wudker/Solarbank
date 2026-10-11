@@ -3,6 +3,9 @@
     "cmake.configureArgs": [
         "-DCMAKE_COMMAND=cube-cmake"
     ],
+    "cmake.configureSettings": {
+        "STM32_PROGRAMMER_CLI": "G:/STM/Programer/bin/STM32_Programmer_CLI.exe"
+    },
     "cmake.preferredGenerators": [
         "Ninja"
     ],

@@ -67,3 +67,30 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
     # Add user defined libraries
 )
+
+set(STM32_PROGRAMMER_CLI "" CACHE FILEPATH "Path to STM32CubeProgrammer CLI")
+if(NOT STM32_PROGRAMMER_CLI)
+    find_program(_STM32_PROGRAMMER_CLI
+        NAMES STM32_Programmer_CLI STM32_Programmer_CLI.exe
+        HINTS
+            "$ENV{STM32CUBE_PROGRAMMER_PATH}"
+            "$ENV{STM32CUBE_PROGRAMMER}"
+            "$ENV{ProgramFiles}/STMicroelectronics/STM32Cube/STM32CubeProgrammer"
+            "C:/Program Files (x86)/STMicroelectronics/STM32Cube/STM32CubeProgrammer"
+        PATH_SUFFIXES bin
+    )
+    if(_STM32_PROGRAMMER_CLI)
+        set(STM32_PROGRAMMER_CLI "${_STM32_PROGRAMMER_CLI}" CACHE FILEPATH "Path to STM32CubeProgrammer CLI" FORCE)
+    endif()
+endif()
+
+if(STM32_PROGRAMMER_CLI)
+    add_custom_target(flash
+        COMMAND "${STM32_PROGRAMMER_CLI}" -c port=SWD -w "$<TARGET_FILE:${CMAKE_PROJECT_NAME}>" -v -rst
+        DEPENDS ${CMAKE_PROJECT_NAME}
+        USES_TERMINAL
+        VERBATIM
+    )
+else()
+    message(STATUS "STM32CubeProgrammer CLI not found; set STM32_PROGRAMMER_CLI to enable the flash target")
+endif()

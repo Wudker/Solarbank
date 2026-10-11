@@ -23,26 +23,26 @@ int main(void)
   while (1)
   {
 
-  double Value = INA219_ReadPower(&ina219)*1000.0; //Value in Wats
+  //double Value = INA219_ReadPower(&ina219)*1000.0; //Value in Wats
   HAL_GPIO_WritePin(GPIOB,LED_status_green_Pin,GPIO_PIN_SET);
-  HAL_Delay(1000);
+  HAL_Delay(500);
   HAL_GPIO_WritePin(GPIOA,LED_status_orange_Pin,GPIO_PIN_SET);
-  HAL_Delay(1000);
+  HAL_Delay(500);
   HAL_GPIO_WritePin(GPIOA,LED_status_red_Pin,GPIO_PIN_SET);
-  HAL_Delay(1000);
+  HAL_Delay(500);
 
   HAL_GPIO_WritePin(GPIOA,LED_status_red_Pin,GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOB,LED_status_green_Pin,GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOA,LED_status_orange_Pin,GPIO_PIN_RESET);
   HAL_Delay(1000);
-  if (Value > 0.1)
-  {
-    HAL_GPIO_WritePin(GPIOA, Fotopanel_enable_Pin, GPIO_PIN_SET);
-  }
-  else if (Value < 0.0)
-  {
-    HAL_GPIO_WritePin(GPIOA, Fotopanel_enable_Pin, GPIO_PIN_SET);
-  }
+  //if (Value > 0.1)
+  //{
+  //  HAL_GPIO_WritePin(GPIOA, Fotopanel_enable_Pin, GPIO_PIN_SET);
+  //}
+  //else if (Value < 0.0)
+ // {
+ //   HAL_GPIO_WritePin(GPIOA, Fotopanel_enable_Pin, GPIO_PIN_SET);
+  //}
 }
 }
 /**
