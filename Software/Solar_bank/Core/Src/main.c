@@ -10,6 +10,8 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_I2C1_Init(void);
+void startup_sequence(void);
+float get_panel_power(void);
 
 int main(void)
 {
@@ -18,13 +20,41 @@ int main(void)
   MX_GPIO_Init();
   MX_ADC1_Init();
   MX_I2C1_Init();
-  INA219_Init(&ina219, &hi2c1, INA219_ADDRESS);
+  //INA219_Init(&ina219, &hi2c1, INA219_ADDRESS);
+  bool INA219_flag = true;
+  startup_sequence();
 
+  while(!INA219_Init(&ina219, &hi2c1, INA219_ADDRESS))
+  {
+    INA219_flag = false;
+  }
   while (1)
   {
+    if(INA219_flag)
+    { 
+      double Value = get_panel_power();
+      
+      if (Value <= 0.5)
+      {
+        HAL_GPIO_WritePin(GPIOA, Fotopanel_enable_Pin, GPIO_PIN_RESET);
+      }
+      else
+      {
+        HAL_GPIO_WritePin(GPIOA, Fotopanel_enable_Pin, GPIO_PIN_SET);
+      }
+    }
+}
+}
 
-  //double Value = INA219_ReadPower(&ina219)*1000.0; //Value in Wats
-  HAL_GPIO_WritePin(GPIOB,LED_status_green_Pin,GPIO_PIN_SET);
+
+float get_panel_power(void)
+{
+  return INA219_ReadPower(&ina219)/(1000.0*0.8); //Value in Wats
+}
+
+void startup_sequence(void)
+{
+   HAL_GPIO_WritePin(GPIOB,LED_status_green_Pin,GPIO_PIN_SET);
   HAL_Delay(500);
   HAL_GPIO_WritePin(GPIOA,LED_status_orange_Pin,GPIO_PIN_SET);
   HAL_Delay(500);
@@ -35,15 +65,6 @@ int main(void)
   HAL_GPIO_WritePin(GPIOB,LED_status_green_Pin,GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOA,LED_status_orange_Pin,GPIO_PIN_RESET);
   HAL_Delay(1000);
-  //if (Value > 0.1)
-  //{
-  //  HAL_GPIO_WritePin(GPIOA, Fotopanel_enable_Pin, GPIO_PIN_SET);
-  //}
-  //else if (Value < 0.0)
- // {
- //   HAL_GPIO_WritePin(GPIOA, Fotopanel_enable_Pin, GPIO_PIN_SET);
-  //}
-}
 }
 /**
   * @brief System Clock Configuration

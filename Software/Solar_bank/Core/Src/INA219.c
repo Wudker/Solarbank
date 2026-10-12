@@ -388,7 +388,7 @@ uint8_t INA219_Init(INA219_t *ina219, I2C_HandleTypeDef *i2c, uint8_t Address)
 		batteryState = Battery_START; // go to starting position.
 		INA219_HealthCheck(ina219,0.0f,1.0f );
 		INA219_Reset(ina219);
-		INA219_setCalibration_32V_2A(ina219);
+		INA219_setCalibration_32V_1A(ina219);
 
 		return 1;
 	}
