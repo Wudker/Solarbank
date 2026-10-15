@@ -1,10 +1,13 @@
 #include  "main.h"
 #include  "stm32u031xx.h"
 #include  "INA219.h"
+#include  "mcp401x.h"
 
 ADC_HandleTypeDef hadc1;
 I2C_HandleTypeDef hi2c1;
 INA219_t ina219;
+uint8_t step =0;
+
 
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
@@ -13,6 +16,9 @@ static void MX_I2C1_Init(void);
 void startup_sequence(void);
 float get_panel_power(void);
 
+
+
+
 int main(void)
 {
   HAL_Init();
@@ -20,14 +26,19 @@ int main(void)
   MX_GPIO_Init();
   MX_ADC1_Init();
   MX_I2C1_Init();
-  //INA219_Init(&ina219, &hi2c1, INA219_ADDRESS);
+  Set_Resistance_I2C(10000);
   bool INA219_flag = true;
   startup_sequence();
 
-  while(!INA219_Init(&ina219, &hi2c1, INA219_ADDRESS))
-  {
-    INA219_flag = false;
-  }
+
+
+
+  //while(!INA219_Init(&ina219, &hi2c1, INA219_ADDRESS))
+  // {
+  //  INA219_flag = false;
+  //}
+  //Póżniej do spradzania czy jest polączenie
+  
   while (1)
   {
     if(INA219_flag)
@@ -49,7 +60,7 @@ int main(void)
 
 float get_panel_power(void)
 {
-  return INA219_ReadPower(&ina219)/(1000.0*0.8); //Value in Wats
+  return INA219_ReadPower(&ina219) / 1000.0f; // Convert to watts
 }
 
 void startup_sequence(void)
