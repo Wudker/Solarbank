@@ -24,11 +24,22 @@ int16_t ina219_powerMultiplier_mW;
  */
 uint16_t Read16(INA219_t *ina219, uint8_t Register)
 {
-	uint8_t Value[2];
+	uint8_t Value[2] = {0U, 0U};
 
-	HAL_I2C_Mem_Read(ina219->ina219_i2c, (INA219_ADDRESS<<1), Register, 1, Value, 2, 1000);
+	if (ina219 == 0 || ina219->ina219_i2c == 0)
+	{
+		Error_Handler();
+		return 0;
+	}
 
-	return ((Value[0] << 8) | Value[1]);
+	if (HAL_I2C_Mem_Read(ina219->ina219_i2c, ((uint16_t)ina219->Address << 1),
+			Register, 1, Value, 2, 1000) != HAL_OK)
+	{
+		Error_Handler();
+		return 0;
+	}
+
+	return ((uint16_t)Value[0] << 8) | Value[1];
 }
 
 /*
@@ -49,9 +60,23 @@ uint16_t Read16(INA219_t *ina219, uint8_t Register)
 HAL_StatusTypeDef Write16(INA219_t *ina219, uint8_t Register, uint16_t Value)
 {
 	uint8_t addr[2];
+	HAL_StatusTypeDef status;
+
+	if (ina219 == 0 || ina219->ina219_i2c == 0)
+	{
+		Error_Handler();
+		return HAL_ERROR;
+	}
+
 	addr[0] = (Value >> 8) & 0xff;  // upper byte
 	addr[1] = (Value >> 0) & 0xff; // lower byte
-	return HAL_I2C_Mem_Write(ina219->ina219_i2c, (INA219_ADDRESS<<1), Register, 1, (uint8_t*)addr, 2, 1000);
+	status = HAL_I2C_Mem_Write(ina219->ina219_i2c, ((uint16_t)ina219->Address << 1),
+			Register, 1, addr, 2, 1000);
+	if (status != HAL_OK)
+	{
+		Error_Handler();
+	}
+	return status;
 }
 
 /*
@@ -371,6 +396,11 @@ void INA219_setPowerMode(INA219_t *ina219, uint8_t Mode)
 
 uint8_t INA219_Init(INA219_t *ina219, I2C_HandleTypeDef *i2c, uint8_t Address)
 {
+	if (ina219 == 0 || i2c == 0 || Address > 0x7f)
+	{
+		return 0;
+	}
+
 	isFirst = false; // set global var used by INA219_GetMiliWattMinutes
 	ina219->ina219_i2c = i2c;
 	ina219->Address = Address;
@@ -378,17 +408,17 @@ uint8_t INA219_Init(INA219_t *ina219, I2C_HandleTypeDef *i2c, uint8_t Address)
 	ina219_currentDivider_mA = 0;
 	ina219_powerMultiplier_mW = 0;
 
-	uint8_t ina219_isReady = HAL_I2C_IsDeviceReady(i2c, (Address << 1), 3, 2);
+	HAL_StatusTypeDef ina219_isReady = HAL_I2C_IsDeviceReady(i2c, ((uint16_t)Address << 1), 3, 2);
 
 	if(ina219_isReady == HAL_OK)
 	{
 		// just to initialize our state machine.
 		//The numbers 0.0f and 1.0f is just to call the healthcheck function.
 		//Feel free to change this if you want. This function should be called in your main function to be polled.
-		batteryState = Battery_START; // go to starting position.
-		INA219_HealthCheck(ina219,0.0f,1.0f );
+		//batteryState = Battery_START; // go to starting position.
+		//INA219_HealthCheck(ina219,0.0f,1.0f );
 		INA219_Reset(ina219);
-		INA219_setCalibration_32V_1A(ina219);
+		INA219_setCalibration_16V_400mA(ina219);
 
 		return 1;
 	}

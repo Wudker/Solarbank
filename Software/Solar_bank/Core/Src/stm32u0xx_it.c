@@ -140,6 +140,8 @@ void SysTick_Handler(void)
 /* please refer to the startup file (startup_stm32u0xx.s).                    */
 /******************************************************************************/
 
-/* USER CODE BEGIN 1 */
-
-/* USER CODE END 1 */
+void EXTI4_15_IRQHandler(void)
+{
+  HAL_GPIO_EXTI_IRQHandler(User_button_input_Pin);
+  HAL_GPIO_EXTI_IRQHandler(USB_input_Pin);
+}

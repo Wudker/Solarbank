@@ -7,6 +7,7 @@ ADC_HandleTypeDef hadc1;
 I2C_HandleTypeDef hi2c1;
 INA219_t ina219;
 uint8_t step =0;
+volatile uint8_t user_button_pressed = 0;
 
 
 void SystemClock_Config(void);
@@ -27,32 +28,23 @@ int main(void)
   MX_ADC1_Init();
   MX_I2C1_Init();
   Set_Resistance_I2C(10000);
-  bool INA219_flag = true;
+  if (!INA219_Init(&ina219, &hi2c1, INA219_ADDRESS))
+  {
+    Error_Handler();
+  }
   startup_sequence();
 
 
 
 
-  //while(!INA219_Init(&ina219, &hi2c1, INA219_ADDRESS))
-  // {
-  //  INA219_flag = false;
-  //}
-  //Póżniej do spradzania czy jest polączenie
   
+
   while (1)
   {
-    if(INA219_flag)
-    { 
-      double Value = get_panel_power();
-      
-      if (Value <= 0.5)
-      {
-        HAL_GPIO_WritePin(GPIOA, Fotopanel_enable_Pin, GPIO_PIN_RESET);
-      }
-      else
-      {
-        HAL_GPIO_WritePin(GPIOA, Fotopanel_enable_Pin, GPIO_PIN_SET);
-      }
+    if (user_button_pressed)
+    {
+      user_button_pressed = 0;
+      HAL_GPIO_TogglePin(LED_status_green_GPIO_Port, LED_status_green_Pin);
     }
 }
 }
@@ -77,6 +69,15 @@ void startup_sequence(void)
   HAL_GPIO_WritePin(GPIOA,LED_status_orange_Pin,GPIO_PIN_RESET);
   HAL_Delay(1000);
 }
+
+void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin)
+{
+  if (GPIO_Pin == User_button_input_Pin)
+  {
+    user_button_pressed = 1;
+  }
+}
+
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -231,9 +232,8 @@ static void MX_I2C1_Init(void)
 static void MX_GPIO_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-  /* USER CODE BEGIN MX_GPIO_Init_1 */
-
-  /* USER CODE END MX_GPIO_Init_1 */
+  HAL_NVIC_SetPriority(EXTI4_15_IRQn, 2, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_15_IRQn);
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOB_CLK_ENABLE();
@@ -290,10 +290,10 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(LED_status_green_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : User_button_input_Pin */
-  GPIO_InitStruct.Pin = User_button_input_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(User_button_input_GPIO_Port, &GPIO_InitStruct);
+GPIO_InitStruct.Pin = User_button_input_Pin;
+GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+GPIO_InitStruct.Pull = GPIO_PULLUP;
+HAL_GPIO_Init(User_button_input_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : USB_input_Pin */
   GPIO_InitStruct.Pin = USB_input_Pin;
