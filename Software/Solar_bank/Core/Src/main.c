@@ -3,19 +3,34 @@
 #include  "INA219.h"
 #include  "mcp401x.h"
 
+#define PANEL_POWER_THRESHOLD_W       0.5f
+#define MPPT_START_RESISTANCE_OHM     5000U
+#define MPPT_MIN_RESISTANCE_OHM       5000U
+#define MPPT_MAX_RESISTANCE_OHM       10000U
+#define MPPT_STEP_OHM                100U
+#define MPPT_POWER_CHANGE_THRESHOLD_W 0.01f
+#define MAIN_UPDATE_INTERVAL_MS       1000U
+#define BATTERY_LOW_ADC_THRESHOLD    2048U
+#define BATTERY_HIGH_ADC_THRESHOLD   3072U
+
 ADC_HandleTypeDef hadc1;
 I2C_HandleTypeDef hi2c1;
 INA219_t ina219;
-uint8_t step =0;
 volatile uint8_t user_button_pressed = 0;
+volatile uint8_t USB_charging_detected = 0;
 
 
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_I2C1_Init(void);
-void startup_sequence(void);
-float get_panel_power(void);
+static void startup_sequence(void);
+static float get_panel_power(void);
+static void Battery_Charge_display(void);
+static void handle_user_button(void);
+static void handle_usb_event(void);
+static void update_charging_control(float panelPower);
+static bool MPPT(float panelPower, bool panelEnabled, int step);
 
 
 
@@ -27,54 +42,213 @@ int main(void)
   MX_GPIO_Init();
   MX_ADC1_Init();
   MX_I2C1_Init();
-  Set_Resistance_I2C(10000);
+
+  if (Set_Resistance_I2C(MPPT_START_RESISTANCE_OHM) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
   if (!INA219_Init(&ina219, &hi2c1, INA219_ADDRESS))
   {
     Error_Handler();
   }
+
   startup_sequence();
 
-
-
-
-  
+  uint32_t lastUpdateTime = HAL_GetTick();
 
   while (1)
   {
-    if (user_button_pressed)
+    handle_user_button();
+    handle_usb_event();
+
+    uint32_t currentTime = HAL_GetTick();
+    if ((currentTime - lastUpdateTime) >= MAIN_UPDATE_INTERVAL_MS)
     {
-      user_button_pressed = 0;
-      HAL_GPIO_TogglePin(LED_status_green_GPIO_Port, LED_status_green_Pin);
+      lastUpdateTime = currentTime;
+      update_charging_control(get_panel_power());
     }
-}
+  }
 }
 
 
-float get_panel_power(void)
+static float get_panel_power(void)
 {
   return INA219_ReadPower(&ina219) / 1000.0f; // Convert to watts
 }
 
-void startup_sequence(void)
+static void startup_sequence(void)
 {
-   HAL_GPIO_WritePin(GPIOB,LED_status_green_Pin,GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LED_status_green_GPIO_Port, LED_status_green_Pin, GPIO_PIN_SET);
   HAL_Delay(500);
-  HAL_GPIO_WritePin(GPIOA,LED_status_orange_Pin,GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LED_status_orange_GPIO_Port, LED_status_orange_Pin, GPIO_PIN_SET);
   HAL_Delay(500);
-  HAL_GPIO_WritePin(GPIOA,LED_status_red_Pin,GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LED_status_red_GPIO_Port, LED_status_red_Pin, GPIO_PIN_SET);
   HAL_Delay(500);
 
-  HAL_GPIO_WritePin(GPIOA,LED_status_red_Pin,GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(GPIOB,LED_status_green_Pin,GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(GPIOA,LED_status_orange_Pin,GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LED_status_red_GPIO_Port, LED_status_red_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LED_status_green_GPIO_Port, LED_status_green_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LED_status_orange_GPIO_Port, LED_status_orange_Pin, GPIO_PIN_RESET);
   HAL_Delay(1000);
 }
+
+static void handle_user_button(void)
+{
+  if (user_button_pressed)
+  {
+    user_button_pressed = 0;
+    Battery_Charge_display();
+  }
+}
+
+static void handle_usb_event(void)
+{
+  if (USB_charging_detected)
+  {
+    USB_charging_detected = 0;
+  }
+}
+
+static void update_charging_control(float panelPower)
+{
+  bool panelEnabled = panelPower >= PANEL_POWER_THRESHOLD_W;
+
+  HAL_GPIO_WritePin(Fotopanel_enable_GPIO_Port, Fotopanel_enable_Pin,
+                    panelEnabled ? GPIO_PIN_SET : GPIO_PIN_RESET);
+
+  if (!MPPT(panelPower, panelEnabled, MPPT_STEP_OHM))
+  {
+    Error_Handler();
+  }
+}
+
+static bool MPPT(float panelPower, bool panelEnabled, int step)
+{
+  static bool initialized = false;
+  static bool previousPowerAvailable = false;
+  static float resistance = MPPT_START_RESISTANCE_OHM;
+  static float previousPower = 0.0f;
+  static int8_t direction = -1;
+
+  if (step <= 0)
+  {
+    return false;
+  }
+
+  if (!panelEnabled)
+  {
+    initialized = false;
+    previousPowerAvailable = false;
+    direction = -1;
+    return true;
+  }
+
+  if (!initialized)
+  {
+    resistance = MPPT_START_RESISTANCE_OHM;
+    if (Set_Resistance_I2C((uint32_t)resistance) != HAL_OK)
+    {
+      return false;
+    }
+
+    initialized = true;
+    previousPowerAvailable = false;
+    return true;
+  }
+
+  if (previousPowerAvailable)
+  {
+    float powerChange = panelPower - previousPower;
+    if (powerChange < -MPPT_POWER_CHANGE_THRESHOLD_W)
+    {
+      direction = -direction;
+    }
+  }
+
+  previousPower = panelPower;
+  previousPowerAvailable = true;
+
+  float candidateResistance = resistance + (direction * step);
+  if (candidateResistance < MPPT_MIN_RESISTANCE_OHM ||
+      candidateResistance > MPPT_MAX_RESISTANCE_OHM)
+  {
+    direction = -direction;
+    candidateResistance = resistance + (direction * step);
+  }
+
+  if (candidateResistance < MPPT_MIN_RESISTANCE_OHM)
+  {
+    candidateResistance = MPPT_MIN_RESISTANCE_OHM;
+  }
+  else if (candidateResistance > MPPT_MAX_RESISTANCE_OHM)
+  {
+    candidateResistance = MPPT_MAX_RESISTANCE_OHM;
+  }
+
+  if (Set_Resistance_I2C((uint32_t)candidateResistance) != HAL_OK)
+  {
+    return false;
+  }
+
+  resistance = candidateResistance;
+  return true;
+}
+
+static void Battery_Charge_display(void)
+{
+  uint16_t adcValue;
+
+  if (HAL_ADC_Start(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  if (HAL_ADC_PollForConversion(&hadc1, 100) != HAL_OK)
+  {
+    HAL_ADC_Stop(&hadc1);
+    Error_Handler();
+  }
+
+  adcValue = (uint16_t)HAL_ADC_GetValue(&hadc1);
+  if (HAL_ADC_Stop(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  if (adcValue < BATTERY_LOW_ADC_THRESHOLD)
+  {
+    HAL_GPIO_WritePin(LED_status_red_GPIO_Port, LED_status_red_Pin, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(LED_status_orange_GPIO_Port, LED_status_orange_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED_status_green_GPIO_Port, LED_status_green_Pin, GPIO_PIN_RESET);
+  }
+  else if (adcValue < BATTERY_HIGH_ADC_THRESHOLD)
+  {
+    HAL_GPIO_WritePin(LED_status_red_GPIO_Port, LED_status_red_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED_status_orange_GPIO_Port, LED_status_orange_Pin, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(LED_status_green_GPIO_Port, LED_status_green_Pin, GPIO_PIN_RESET);
+  }
+  else
+  {
+    HAL_GPIO_WritePin(LED_status_red_GPIO_Port, LED_status_red_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED_status_orange_GPIO_Port, LED_status_orange_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED_status_green_GPIO_Port, LED_status_green_Pin, GPIO_PIN_SET);
+  }
+}
+
 
 void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin)
 {
   if (GPIO_Pin == User_button_input_Pin)
   {
     user_button_pressed = 1;
+  }
+}
+
+void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin)
+{
+  if (GPIO_Pin == USB_input_Pin)
+  {
+    USB_charging_detected = 1;
   }
 }
 
