@@ -1,24 +1,39 @@
-#include  "main.h"
-#include  "stm32u031xx.h"
-#include  "INA219.h"
-#include  "mcp401x.h"
+#include "main.h"
+#include "stm32u031xx.h"
+#include "INA219.h"
+#include "mcp401x.h"
 
-#define PANEL_POWER_THRESHOLD_W       0.5f
-#define MPPT_START_RESISTANCE_OHM     5000U
-#define MPPT_MIN_RESISTANCE_OHM       5000U
-#define MPPT_MAX_RESISTANCE_OHM       10000U
-#define MPPT_STEP_OHM                100U
-#define MPPT_POWER_CHANGE_THRESHOLD_W 0.01f
+// Wartosci orientacyjne. Nalezy je sprawdzic na prawdziwym panelu.
+#define PANEL_MIN_VOLTAGE_MV           3000U
+#define PANEL_POWER_START_W           0.50f
+#define PANEL_POWER_STOP_W            0.20f
+#define PANEL_RETRY_INTERVAL_MS       5000U
 #define MAIN_UPDATE_INTERVAL_MS       1000U
-#define BATTERY_LOW_ADC_THRESHOLD    2048U
-#define BATTERY_HIGH_ADC_THRESHOLD   3072U
+
+#define MPPT_START_RESISTANCE_OHM      5000U
+#define MPPT_MIN_RESISTANCE_OHM        5000U
+#define MPPT_MAX_RESISTANCE_OHM       10000U
+#define MPPT_STEP_OHM                  100U
+#define MPPT_POWER_CHANGE_THRESHOLD_W 0.01f
+
+// Dzielnik baterii: R12=220k, R13=330k, referencja ADC=3.3V.
+// Odpowiednio ok. 3.5V i 3.9V na ogniwie.
+#define BATTERY_LOW_ADC_THRESHOLD      2606U
+#define BATTERY_HIGH_ADC_THRESHOLD     2904U
+#define BATTERY_LED_TIME_MS            3000U
+#define BUTTON_DEBOUNCE_MS             200U
 
 ADC_HandleTypeDef hadc1;
 I2C_HandleTypeDef hi2c1;
 INA219_t ina219;
-volatile uint8_t user_button_pressed = 0;
-volatile uint8_t USB_charging_detected = 0;
 
+volatile uint8_t user_button_pressed = 0;
+static bool panel_on = false;
+static bool first_panel_measurement = false;
+static uint8_t low_power_count = 0;
+static uint32_t last_panel_attempt = 0;
+static bool battery_led_visible = false;
+static uint32_t battery_led_time = 0;
 
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
@@ -28,12 +43,10 @@ static void startup_sequence(void);
 static float get_panel_power(void);
 static void Battery_Charge_display(void);
 static void handle_user_button(void);
-static void handle_usb_event(void);
-static void update_charging_control(float panelPower);
+static void turn_off_battery_leds(void);
+static void set_panel(bool enable);
+static void update_charging_control(void);
 static bool MPPT(float panelPower, bool panelEnabled, int step);
-
-
-
 
 int main(void)
 {
@@ -43,80 +56,161 @@ int main(void)
   MX_ADC1_Init();
   MX_I2C1_Init();
 
-  if (Set_Resistance_I2C(MPPT_START_RESISTANCE_OHM) != HAL_OK)
+  // Kalibracja ADC przed pierwszym pomiarem.
+  if (HAL_ADCEx_Calibration_Start(&hadc1) != HAL_OK)
   {
     Error_Handler();
   }
 
+  // Panel domyslnie odlaczony (PA3=1 oznacza DISABLE).
+  set_panel(false);
+
+  if (Set_Resistance_I2C(MPPT_START_RESISTANCE_OHM) != HAL_OK)
+  {
+    Error_Handler();
+  }
   if (!INA219_Init(&ina219, &hi2c1, INA219_ADDRESS))
   {
     Error_Handler();
   }
 
   startup_sequence();
-
-  uint32_t lastUpdateTime = HAL_GetTick();
+  uint32_t last_update_time = HAL_GetTick();
+  // Pierwsza proba wlaczenia panelu po 5 sekundach od startu.
+  last_panel_attempt = last_update_time;
 
   while (1)
   {
     handle_user_button();
-    handle_usb_event();
 
-    uint32_t currentTime = HAL_GetTick();
-    if ((currentTime - lastUpdateTime) >= MAIN_UPDATE_INTERVAL_MS)
+    uint32_t now = HAL_GetTick();
+    if (battery_led_visible && now - battery_led_time >= BATTERY_LED_TIME_MS)
     {
-      lastUpdateTime = currentTime;
-      update_charging_control(get_panel_power());
+      turn_off_battery_leds();
+      battery_led_visible = false;
+    }
+
+    if (now - last_update_time >= MAIN_UPDATE_INTERVAL_MS)
+    {
+      last_update_time = now;
+      update_charging_control();
     }
   }
 }
 
+static void set_panel(bool enable)
+{
+  // Schemat: PA3 -> Q4 -> Q5 -> Q6. GPIO=0 wlacza panel.
+  HAL_GPIO_WritePin(Fotopanel_enable_GPIO_Port, Fotopanel_enable_Pin,
+                    enable ? GPIO_PIN_RESET : GPIO_PIN_SET);
+  panel_on = enable;
+}
 
 static float get_panel_power(void)
 {
-  return INA219_ReadPower(&ina219) / 1000.0f; // Convert to watts
+  return INA219_ReadPower(&ina219) / 1000.0f; // mW -> W
 }
 
 static void startup_sequence(void)
 {
   HAL_GPIO_WritePin(LED_status_green_GPIO_Port, LED_status_green_Pin, GPIO_PIN_SET);
-  HAL_Delay(500);
+  HAL_Delay(200);
   HAL_GPIO_WritePin(LED_status_orange_GPIO_Port, LED_status_orange_Pin, GPIO_PIN_SET);
-  HAL_Delay(500);
+  HAL_Delay(200);
   HAL_GPIO_WritePin(LED_status_red_GPIO_Port, LED_status_red_Pin, GPIO_PIN_SET);
-  HAL_Delay(500);
+  HAL_Delay(200);
+  turn_off_battery_leds();
+}
 
+static void turn_off_battery_leds(void)
+{
   HAL_GPIO_WritePin(LED_status_red_GPIO_Port, LED_status_red_Pin, GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(LED_status_green_GPIO_Port, LED_status_green_Pin, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(LED_status_orange_GPIO_Port, LED_status_orange_Pin, GPIO_PIN_RESET);
-  HAL_Delay(1000);
+  HAL_GPIO_WritePin(LED_status_green_GPIO_Port, LED_status_green_Pin, GPIO_PIN_RESET);
 }
 
 static void handle_user_button(void)
 {
+  static uint32_t last_press_time = 0;
   if (user_button_pressed)
   {
     user_button_pressed = 0;
-    Battery_Charge_display();
+    uint32_t now = HAL_GetTick();
+    if (now - last_press_time >= BUTTON_DEBOUNCE_MS)
+    {
+      last_press_time = now;
+      Battery_Charge_display();
+      battery_led_time = now;
+      battery_led_visible = true;
+    }
   }
 }
 
-static void handle_usb_event(void)
+static void update_charging_control(void)
 {
-  if (USB_charging_detected)
+  uint32_t now = HAL_GetTick();
+  // Q3 zwiera PC14 do GND po wykryciu USB. Odczytujemy stan,
+  // aby rozpoznac takze USB podpiete jeszcze przed uruchomieniem MCU.
+  bool usb_connected = HAL_GPIO_ReadPin(USB_input_GPIO_Port, USB_input_Pin)
+                       == GPIO_PIN_RESET;
+
+  if (usb_connected)
   {
-    USB_charging_detected = 0;
+    set_panel(false); // Priorytet dla ladowania USB.
+    low_power_count = 0;
+    first_panel_measurement = false;
+    last_panel_attempt = now;
+    MPPT(0.0f, false, MPPT_STEP_OHM); // Wyzeruj pamiec MPPT.
+    return;
   }
-}
 
-static void update_charging_control(float panelPower)
-{
-  bool panelEnabled = panelPower >= PANEL_POWER_THRESHOLD_W;
+  if (!panel_on)
+  {
+    if (now - last_panel_attempt < PANEL_RETRY_INTERVAL_MS)
+    {
+      return;
+    }
+    last_panel_attempt = now;
 
-  HAL_GPIO_WritePin(Fotopanel_enable_GPIO_Port, Fotopanel_enable_Pin,
-                    panelEnabled ? GPIO_PIN_SET : GPIO_PIN_RESET);
+    // Napiecie panelu mozna zmierzyc takze przy Q6 odlaczonym.
+    // Jest to napiecie bez obciazenia, a nie potwierdzenie dostepnej mocy.
+    if (INA219_ReadBusVoltage(&ina219) < PANEL_MIN_VOLTAGE_MV)
+    {
+      return;
+    }
 
-  if (!MPPT(panelPower, panelEnabled, MPPT_STEP_OHM))
+    if (Set_Resistance_I2C(MPPT_START_RESISTANCE_OHM) != HAL_OK)
+    {
+      Error_Handler();
+    }
+    MPPT(0.0f, false, MPPT_STEP_OHM);
+    first_panel_measurement = true;
+    low_power_count = 0;
+    set_panel(true);
+    return; // Czekamy ok. 1 s na ustabilizowanie napiecia.
+  }
+
+  float panel_power = get_panel_power();
+  float threshold = first_panel_measurement ? PANEL_POWER_START_W
+                                            : PANEL_POWER_STOP_W;
+
+  if (panel_power < threshold)
+  {
+    low_power_count++;
+    if (low_power_count >= 2) // Nie odlaczaj po pojedynczym slabym pomiarze.
+    {
+      set_panel(false);
+      low_power_count = 0;
+      first_panel_measurement = false;
+      last_panel_attempt = now;
+      MPPT(0.0f, false, MPPT_STEP_OHM);
+    }
+    return;
+  }
+
+  first_panel_measurement = false;
+  low_power_count = 0;
+  if (!MPPT(panel_power, true, MPPT_STEP_OHM))
   {
     Error_Handler();
   }
@@ -124,6 +218,7 @@ static void update_charging_control(float panelPower)
 
 static bool MPPT(float panelPower, bool panelEnabled, int step)
 {
+  // Prosty algorytm perturb & observe - bez dodatkowych bibliotek.
   static bool initialized = false;
   static bool previousPowerAvailable = false;
   static float resistance = MPPT_START_RESISTANCE_OHM;
@@ -134,7 +229,6 @@ static bool MPPT(float panelPower, bool panelEnabled, int step)
   {
     return false;
   }
-
   if (!panelEnabled)
   {
     initialized = false;
@@ -142,7 +236,6 @@ static bool MPPT(float panelPower, bool panelEnabled, int step)
     direction = -1;
     return true;
   }
-
   if (!initialized)
   {
     resistance = MPPT_START_RESISTANCE_OHM;
@@ -150,7 +243,6 @@ static bool MPPT(float panelPower, bool panelEnabled, int step)
     {
       return false;
     }
-
     initialized = true;
     previousPowerAvailable = false;
     return true;
@@ -164,7 +256,6 @@ static bool MPPT(float panelPower, bool panelEnabled, int step)
       direction = -direction;
     }
   }
-
   previousPower = panelPower;
   previousPowerAvailable = true;
 
@@ -175,7 +266,6 @@ static bool MPPT(float panelPower, bool panelEnabled, int step)
     direction = -direction;
     candidateResistance = resistance + (direction * step);
   }
-
   if (candidateResistance < MPPT_MIN_RESISTANCE_OHM)
   {
     candidateResistance = MPPT_MIN_RESISTANCE_OHM;
@@ -189,7 +279,6 @@ static bool MPPT(float panelPower, bool panelEnabled, int step)
   {
     return false;
   }
-
   resistance = candidateResistance;
   return true;
 }
@@ -197,58 +286,41 @@ static bool MPPT(float panelPower, bool panelEnabled, int step)
 static void Battery_Charge_display(void)
 {
   uint16_t adcValue;
-
   if (HAL_ADC_Start(&hadc1) != HAL_OK)
   {
     Error_Handler();
   }
-
   if (HAL_ADC_PollForConversion(&hadc1, 100) != HAL_OK)
   {
     HAL_ADC_Stop(&hadc1);
     Error_Handler();
   }
-
   adcValue = (uint16_t)HAL_ADC_GetValue(&hadc1);
   if (HAL_ADC_Stop(&hadc1) != HAL_OK)
   {
     Error_Handler();
   }
 
+  turn_off_battery_leds();
   if (adcValue < BATTERY_LOW_ADC_THRESHOLD)
   {
     HAL_GPIO_WritePin(LED_status_red_GPIO_Port, LED_status_red_Pin, GPIO_PIN_SET);
-    HAL_GPIO_WritePin(LED_status_orange_GPIO_Port, LED_status_orange_Pin, GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(LED_status_green_GPIO_Port, LED_status_green_Pin, GPIO_PIN_RESET);
   }
   else if (adcValue < BATTERY_HIGH_ADC_THRESHOLD)
   {
-    HAL_GPIO_WritePin(LED_status_red_GPIO_Port, LED_status_red_Pin, GPIO_PIN_RESET);
     HAL_GPIO_WritePin(LED_status_orange_GPIO_Port, LED_status_orange_Pin, GPIO_PIN_SET);
-    HAL_GPIO_WritePin(LED_status_green_GPIO_Port, LED_status_green_Pin, GPIO_PIN_RESET);
   }
   else
   {
-    HAL_GPIO_WritePin(LED_status_red_GPIO_Port, LED_status_red_Pin, GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(LED_status_orange_GPIO_Port, LED_status_orange_Pin, GPIO_PIN_RESET);
     HAL_GPIO_WritePin(LED_status_green_GPIO_Port, LED_status_green_Pin, GPIO_PIN_SET);
   }
 }
-
 
 void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin)
 {
   if (GPIO_Pin == User_button_input_Pin)
   {
     user_button_pressed = 1;
-  }
-}
-
-void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin)
-{
-  if (GPIO_Pin == USB_input_Pin)
-  {
-    USB_charging_detected = 1;
   }
 }
 
@@ -266,7 +338,6 @@ void SystemClock_Config(void)
   HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE2);
 
   /** Initializes the RCC Oscillators according to the specified parameters
-  * in the RCC_OscInitTypeDef structure.
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
@@ -326,7 +397,7 @@ static void MX_ADC1_Init(void)
   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   hadc1.Init.DMAContinuousRequests = DISABLE;
   hadc1.Init.Overrun = ADC_OVR_DATA_PRESERVED;
-  hadc1.Init.SamplingTimeCommon1 = ADC_SAMPLETIME_1CYCLE_5;
+  hadc1.Init.SamplingTimeCommon1 = ADC_SAMPLETIME_160CYCLES_5;
   hadc1.Init.SamplingTimeCommon2 = ADC_SAMPLETIME_1CYCLE_5;
   hadc1.Init.OversamplingMode = DISABLE;
   hadc1.Init.TriggerFrequencyMode = ADC_TRIGGER_FREQ_HIGH;
@@ -415,14 +486,14 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, Fotopanel_enable_Pin|LED_status_red_Pin|LED_status_orange_Pin, GPIO_PIN_RESET);
+  /* Na PCB PA3=1 odlacza panel. Ustaw przed konfiguracja pinu. */
+  HAL_GPIO_WritePin(GPIOA, Fotopanel_enable_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA, LED_status_red_Pin|LED_status_orange_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_status_green_GPIO_Port, LED_status_green_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : PB9 PB0 PB4 PB5
-                           PB6 */
+  /*Configure GPIO pins : PB9 PB0 PB4 PB5 PB6 */
   GPIO_InitStruct.Pin = GPIO_PIN_9|GPIO_PIN_0|GPIO_PIN_4|GPIO_PIN_5
                           |GPIO_PIN_6;
   GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
@@ -441,8 +512,7 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PA1 PA2 PA4 PA5
-                           PA11 PA12 */
+  /*Configure GPIO pins : PA1 PA2 PA4 PA5 PA11 PA12 */
   GPIO_InitStruct.Pin = GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_4|GPIO_PIN_5
                           |GPIO_PIN_11|GPIO_PIN_12;
   GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
@@ -464,15 +534,15 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(LED_status_green_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : User_button_input_Pin */
-GPIO_InitStruct.Pin = User_button_input_Pin;
-GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-GPIO_InitStruct.Pull = GPIO_PULLUP;
-HAL_GPIO_Init(User_button_input_GPIO_Port, &GPIO_InitStruct);
+  GPIO_InitStruct.Pin = User_button_input_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(User_button_input_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : USB_input_Pin */
+  /* PC14: podlaczony USB = stan niski, bez przerwania */
   GPIO_InitStruct.Pin = USB_input_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL; // R26 juz podciaga do 3.3 V.
   HAL_GPIO_Init(USB_input_GPIO_Port, &GPIO_InitStruct);
 }
 
@@ -483,8 +553,12 @@ HAL_GPIO_Init(User_button_input_GPIO_Port, &GPIO_InitStruct);
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
+  // Ustaw panel w stan wylaczony i sygnalizuj blad.
+  HAL_GPIO_WritePin(Fotopanel_enable_GPIO_Port, Fotopanel_enable_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LED_status_green_GPIO_Port, LED_status_green_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LED_status_orange_GPIO_Port, LED_status_orange_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LED_status_red_GPIO_Port, LED_status_red_Pin, GPIO_PIN_SET);
   while (1)
   {
   }
@@ -495,14 +569,12 @@ void Error_Handler(void)
   * @brief  Reports the name of the source file and the source line number
   *         where the assert_param error has occurred.
   * @param  file: pointer to the source file name
-  * @param  line: assert_param error line source number
+  * @param  line: assert_param file line number
   * @retval None
   */
 void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
-  /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */

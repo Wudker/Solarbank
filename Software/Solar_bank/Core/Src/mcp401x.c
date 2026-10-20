@@ -11,16 +11,16 @@
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
  *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
  *******************************************************************************
  */
 
@@ -29,94 +29,82 @@
 
 extern I2C_HandleTypeDef hi2c1;
 
-
 /**
-  * @brief  Set step value. Range 0 - 127
-  * @retval None
+  * @brief Set step value. Range 0 - 127.
   */
 void SetStep(uint8_t *step)
 {
-	HAL_I2C_Master_Transmit(&hi2c1, MCP401XADDR, step, 1, HAL_MAX_DELAY);
+    HAL_I2C_Master_Transmit(&hi2c1, MCP401XADDR, step, 1, 100U);
 }
 
 /**
-  * @brief  Read step value. Range 0 - 127
-  * @retval int
+  * @brief Read step value. Range 0 - 127.
   */
 int ReadStep(void)
 {
-	uint8_t tempBuf[1] = {0};
-	HAL_I2C_Master_Receive(&hi2c1, MCP401XADDR, tempBuf, 1, HAL_MAX_DELAY);
-	return *tempBuf;
+    uint8_t tempBuf[1] = {0};
+    HAL_I2C_Master_Receive(&hi2c1, MCP401XADDR, tempBuf, 1, 100U);
+    return *tempBuf;
 }
 
-/**
-  * @brief  Set Resistance value, Rwb.
-  * @retval None
-  */
 void SetResistance(uint32_t Rwb)
 {
-	uint8_t step;
+    uint8_t step;
 
-	if (Rwb <= Rw)
-	{
-		step = 0;
-	}
-	else if (Rwb >= (MAXRESISTANCE + Rw))
-	{
-		step = MAXSTEP;
-	}
-	else
-	{
-		step = (uint8_t)(((Rwb - Rw) * MAXSTEP + (MAXRESISTANCE / 2)) / MAXRESISTANCE);
-	}
+    if (Rwb <= Rw)
+    {
+        step = 0;
+    }
+    else if (Rwb >= (MAXRESISTANCE + Rw))
+    {
+        step = MAXSTEP;
+    }
+    else
+    {
+        step = (uint8_t)(((Rwb - Rw) * MAXSTEP + (MAXRESISTANCE / 2)) / MAXRESISTANCE);
+    }
 
-	SetStep(&step);
+    SetStep(&step);
 }
 
-/**
-  * @brief  Read Resistance value, Rwb.
-  * @retval int
-  */
 int ReadResistance(void)
 {
-	uint8_t step = ReadStep();
-	return Rw + (int)((MAXRESISTANCE * step + (MAXSTEP / 2)) / MAXSTEP);
+    uint8_t step = ReadStep();
+    return Rw + (int)((MAXRESISTANCE * step + (MAXSTEP / 2)) / MAXSTEP);
 }
 
 HAL_StatusTypeDef Set_Resistance_I2C(uint32_t Rwb)
 {
-	uint8_t step;
+    uint8_t step;
 
-	if (Rwb <= Rw)
-	{
-		step = 0;
-	}
-	else if (Rwb >= (MAXRESISTANCE + Rw))
-	{
-		step = MAXSTEP;
-	}
-	else
-	{
-		step = (uint8_t)(((Rwb - Rw) * MAXSTEP + (MAXRESISTANCE / 2)) / MAXRESISTANCE);
-	}
+    if (Rwb <= Rw)
+    {
+        step = 0;
+    }
+    else if (Rwb >= (MAXRESISTANCE + Rw))
+    {
+        step = MAXSTEP;
+    }
+    else
+    {
+        step = (uint8_t)(((Rwb - Rw) * MAXSTEP + (MAXRESISTANCE / 2)) / MAXRESISTANCE);
+    }
 
-	return HAL_I2C_Master_Transmit(&hi2c1, MCP401XADDR, &step, 1, HAL_MAX_DELAY);
+    return HAL_I2C_Master_Transmit(&hi2c1, MCP401XADDR, &step, 1, 100U);
 }
 
 HAL_StatusTypeDef Read_step_I2C(uint8_t *step)
 {
-	return HAL_I2C_Master_Receive(&hi2c1, MCP401XADDR, step, 1, HAL_MAX_DELAY);
+    return HAL_I2C_Master_Receive(&hi2c1, MCP401XADDR, step, 1, 100U);
 }
 
-
-//iN MAIN USAGE
+// In main usage
 void POTENTIOMETER_SET_RESISTANCE(uint32_t Rwb)
 {
-  Set_Resistance_I2C(Rwb);
+    Set_Resistance_I2C(Rwb);
 }
 
 void POTENTIOMETER_GET_STEP(uint8_t *step)
 {
-  Read_step_I2C(step);
+    Read_step_I2C(step);
 }

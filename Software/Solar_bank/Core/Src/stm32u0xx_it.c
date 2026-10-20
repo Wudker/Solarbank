@@ -26,65 +26,49 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
-
 /* USER CODE END TD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN PFP */
-
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-
 /* USER CODE BEGIN EV */
-
 /* USER CODE END EV */
 
-/******************************************************************************/
-/*           Cortex Processor Interruption and Exception Handlers          */
-/******************************************************************************/
-/**
-  * @brief This function handles Non maskable interrupt.
-  */
+/*******************************************************************************/
+/*           Cortex Processor Interruption and Exception Handlers              */
+/*******************************************************************************/
 void NMI_Handler(void)
 {
   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
-
   /* USER CODE END NonMaskableInt_IRQn 0 */
   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
-   while (1)
+  while (1)
   {
   }
   /* USER CODE END NonMaskableInt_IRQn 1 */
 }
 
-/**
-  * @brief This function handles Hard fault interrupt.
-  */
 void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
-
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {
@@ -93,55 +77,35 @@ void HardFault_Handler(void)
   }
 }
 
-/**
-  * @brief This function handles System service call via SVC instruction.
-  */
 void SVC_Handler(void)
 {
   /* USER CODE BEGIN SVCall_IRQn 0 */
-
   /* USER CODE END SVCall_IRQn 0 */
   /* USER CODE BEGIN SVCall_IRQn 1 */
-
   /* USER CODE END SVCall_IRQn 1 */
 }
 
-/**
-  * @brief This function handles Pendable request for system service.
-  */
 void PendSV_Handler(void)
 {
   /* USER CODE BEGIN PendSV_IRQn 0 */
-
   /* USER CODE END PendSV_IRQn 0 */
   /* USER CODE BEGIN PendSV_IRQn 1 */
-
   /* USER CODE END PendSV_IRQn 1 */
 }
 
-/**
-  * @brief This function handles System tick timer.
-  */
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
-
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
-
   /* USER CODE END SysTick_IRQn 1 */
 }
 
-/******************************************************************************/
-/* STM32U0xx Peripheral Interrupt Handlers                                    */
-/* Add here the Interrupt Handlers for the used peripherals.                  */
-/* For the available peripheral interrupt handler names,                      */
-/* please refer to the startup file (startup_stm32u0xx.s).                    */
-/******************************************************************************/
-
+/*******************************************************************************/
+/* STM32U0xx Peripheral Interrupt Handlers                                     */
+/*******************************************************************************/
 void EXTI4_15_IRQHandler(void)
 {
   HAL_GPIO_EXTI_IRQHandler(User_button_input_Pin);
-  HAL_GPIO_EXTI_IRQHandler(USB_input_Pin);
 }
