@@ -1,0 +1,9 @@
+Manufacturer=Texas Instruments
+PartNumber=TPS631000DRLR
+PartCategory=Undefined or Miscellaneous
+PackageCategory=SO Transistor Flat Lead
+PinCount=8
+Version=1.1
+Released=2022-05-10 10:42:17
+Downloaded=2026-11-14 22:51:57
+3D=Y

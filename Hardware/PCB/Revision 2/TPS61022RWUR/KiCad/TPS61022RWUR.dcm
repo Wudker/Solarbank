@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP TPS61022RWUR
+D 8-A boost converter with 0.5-V ultra-low input voltage
+K
+F http://www.ti.com/lit/gpn/TPS61022
+$ENDCMP
+#
+#End Doc Library
