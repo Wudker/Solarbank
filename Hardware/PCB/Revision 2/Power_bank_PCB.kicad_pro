@@ -205,7 +205,8 @@
       "track_widths": [
         0.0,
         0.2,
-        0.35
+        0.35,
+        0.4
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -256,7 +257,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "V2"
+      "sch_revision": "B"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -712,7 +713,7 @@
         "uuid": "88f10dd7-9e09-4e00-9a4e-d9b8f571df2f"
       }
     ],
-    "used_designators": "U7-8,L3,#PWR22,#PWR27,#PWR39-41,#PWR44,#PWR70-73,IC1,R10,R16,R23-24,C21,C31-32",
+    "used_designators": "D5-6,#PWR72,#PWR74-76,R32-33",
     "variants": []
   },
   "sheets": [
